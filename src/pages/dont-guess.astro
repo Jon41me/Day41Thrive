@@ -1,0 +1,354 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FloatingActionButton from '../components/FloatingActionButton.astro';
+
+const BOOK_URL = 'https://www.lulu.com/shop/jonathon-broce/dont-guess-thrive-through-storms/paperback/product-459p5j7.html?page=1&pageSize=4';
+
+const frameworkPoints = [
+    {
+        letter: "G",
+        title: "Grow",
+        description: "Plant your SEED and build a solid foundation."
+    },
+    {
+        letter: "U",
+        title: "Unleash",
+        description: "RISE to unlock potential without micromanaging."
+    },
+    {
+        letter: "E",
+        title: "Enhance",
+        description: "Find your FLOW and stop spinning your wheels."
+    },
+    {
+        letter: "S",
+        title: "Strategize",
+        description: "Plan SMART and stop reacting impulsively."
+    },
+    {
+        letter: "S",
+        title: "Synchronize",
+        description: "Build a cohesive TEAM that works together seamlessly."
+    }
+];
+
+const bookBenefits = [
+    {
+        title: "Practical Tools",
+        description: "Real-world tactics to grow yourself and your team."
+    },
+    {
+        title: "Relatable Stories",
+        description: "Laugh, cringe, and learn from Jonathon's experiences."
+    },
+    {
+        title: "Memorable Framework",
+        description: "G.U.E.S.S. is easy to remember and apply."
+    },
+    {
+        title: "Permission to Be Imperfect",
+        description: "Embrace your flaws and still thrive."
+    }
+];
+---
+
+<Layout title="Don't GUESS - Day 41 Thrive">
+    <Header />
+    <main class="dont-guess-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">🌪️ Don't GUESS, Thrive Through Storms</h1>
+                <p class="subtitle">Your Leadership Survival Guide</p>
+                <p class="hero-description">Life throws storms at all of us—tight deadlines, team conflicts, unexpected challenges. But instead of guessing your way through the chaos, why not have a game plan? That's where Jonathon Broce's Don't GUESS, Thrive Through Storms comes in.</p>
+                <div class="hero-cta">
+                    <a href={BOOK_URL} class="btn" target="_blank" rel="noopener noreferrer">GET A COPY</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-card">
+                    <p>This isn't your typical leadership book filled with jargon and fluff. Jonathon keeps it real with humor, honesty, and practical advice that you can actually use. Whether you're a new manager facing your first crisis or a seasoned leader juggling multiple responsibilities, this book offers insights to help you navigate the storm.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="framework-section">
+            <div class="container">
+                <h2>🚀 The G.U.E.S.S. Framework</h2>
+                <p class="section-intro">Jonathon introduces the G.U.E.S.S. framework to guide you:</p>
+                
+                <div class="framework-grid">
+                    {frameworkPoints.map(point => (
+                        <div class="framework-card">
+                            <div class="letter">{point.letter}</div>
+                            <h3>{point.title}</h3>
+                            <p>{point.description}</p>
+                        </div>
+                    ))}
+                </div>
+                
+                <p class="framework-outro">Each step is filled with actionable strategies, relatable stories, and a touch of sarcasm to keep things interesting.</p>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <h2>📘 Why You Need This Book</h2>
+                <div class="benefits-grid">
+                    {bookBenefits.map(benefit => (
+                        <div class="benefit-card">
+                            <h3>{benefit.title}</h3>
+                            <p>{benefit.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <p>If you're ready to stop winging it and start leading with purpose, this book is your compass through the storm.</p>
+                    <a href={BOOK_URL} class="btn" target="_blank" rel="noopener noreferrer">GET A COPY</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .dont-guess-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+    }
+
+    .hero-cta {
+        text-align: center;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .intro-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .intro-card p {
+        font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+        color: var(--text);
+    }
+
+    h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .section-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .framework-grid {
+        display: grid;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .framework-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .framework-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .letter {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--primary);
+        margin-bottom: 1rem;
+    }
+
+    .framework-card h3 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .framework-outro {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .benefits-grid {
+        display: grid;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .benefit-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .benefit-card h3 {
+        color: var(--primary);
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .cta-section {
+        background: rgba(255, 20, 147, 0.05);
+    }
+
+    .cta-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .cta-card p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background: var(--primary);
+        color: white;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        background: var(--secondary);
+        transform: translateY(-2px);
+    }
+
+    @media (min-width: 768px) {
+        .framework-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .framework-grid {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .benefits-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .intro-card,
+        .framework-card,
+        .benefit-card,
+        .cta-card {
+            padding: 1.5rem;
+        }
+
+        .cta-card {
+            margin: 0 1rem;
+        }
+    }
+</style>

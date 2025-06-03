@@ -1,0 +1,252 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FloatingActionButton from '../components/FloatingActionButton.astro';
+
+const CIRCLE_URL = 'https://day-41-thrive.circle.so/join?invitation_token=00e0eb87337bfcf606225f4193d423053b195615-8d4d3589-3159-4ea7-b1bc-25f17e8c5106';
+const NEWSLETTER_URL = 'https://app.hellobonsai.com/f/ac1e0dfad328dcc';
+---
+
+<Layout title="Join Us - Day 41 Thrive">
+    <Header />
+    <main class="join-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">Join Us</h1>
+                <p class="hero-description">Welcome to Day 41 Thrive — where leaders come together to sharpen their thinking, share hard-won lessons, and push each other toward real growth. Whether you're looking for a place to connect or simply want top-tier insights delivered to your inbox, you're in the right place.</p>
+            </div>
+        </section>
+
+        <section class="community-section">
+            <div class="container">
+                <div class="community-card">
+                    <h2>Join the Day 41 Thrive Community Circle</h2>
+                    <p class="intro">Looking for a space where leadership conversations actually matter?</p>
+                    <p>The Day 41 Thrive Community Circle is a free space where leaders, entrepreneurs, and growth-minded individuals come together to connect, share, and learn from each other.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>Join real-time conversations with like-minded leaders</li>
+                        <li>Access free webinars and exclusive trainings</li>
+                        <li>Be part of a community that is here to lift each other up</li>
+                    </ul>
+
+                    <div class="free-note">
+                        <p>It's completely free to join — because we believe leadership doesn't thrive in isolation.</p>
+                        <p>Click below to hop into the circle and start the conversations that spark real growth.</p>
+                    </div>
+
+                    <a href={CIRCLE_URL} class="btn join-btn" target="_blank" rel="noopener noreferrer">
+                        Join Circle
+                    </a>
+                </div>
+
+                <div class="newsletter-card">
+                    <h2>Subscribe to the Day 41 Thrive Monthly Newsletter</h2>
+                    <p class="intro">Want leadership insights, strategies, and tools delivered once a month — with no spam or fluff?</p>
+                    <p>Sign up for the Day 41 Thrive Monthly Newsletter and get:</p>
+
+                    <ul class="benefits-list">
+                        <li>One thoughtfully curated email each month</li>
+                        <li>Actionable tips and strategies you can apply right away</li>
+                        <li>Early access to upcoming events, trainings, and special offers</li>
+                    </ul>
+
+                    <div class="simple-note">
+                        <p>We keep it simple: one email, once a month. No inbox clutter, just meaningful leadership content.</p>
+                    </div>
+
+                    <a href={NEWSLETTER_URL} class="btn subscribe-btn" target="_blank" rel="noopener noreferrer">
+                        Join Newsletter
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .join-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+    }
+
+    .community-section {
+        padding: 4rem 0;
+    }
+
+    .community-card,
+    .newsletter-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        transition: transform 0.3s ease;
+    }
+
+    .community-card:hover,
+    .newsletter-card:hover {
+        transform: translateY(-4px);
+    }
+
+    h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .intro {
+        color: var(--primary);
+        font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: var(--text);
+        font-size: clamp(1rem, 1.5vw, 1.1rem);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .benefits-list {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+    }
+
+    .benefits-list li {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+        color: var(--text);
+        font-size: clamp(1rem, 1.5vw, 1.1rem);
+        line-height: 1.6;
+    }
+
+    .benefits-list li::before {
+        content: "✓";
+        color: var(--primary);
+        position: absolute;
+        left: 0;
+    }
+
+    .free-note,
+    .simple-note {
+        background: rgba(255, 20, 147, 0.1);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        margin: 2rem 0;
+        text-align: center;
+    }
+
+    .free-note p:last-child,
+    .simple-note p:last-child {
+        margin-bottom: 0;
+    }
+
+    .btn {
+        display: block;
+        width: fit-content;
+        margin: 2rem auto 0;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+
+    .join-btn {
+        background: var(--primary);
+        color: white;
+    }
+
+    .subscribe-btn {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 20, 147, 0.2);
+    }
+
+    .join-btn:hover {
+        background: var(--secondary);
+    }
+
+    .subscribe-btn:hover {
+        background: var(--primary);
+        color: white;
+    }
+
+    @media (max-width: 768px) {
+        .community-card,
+        .newsletter-card {
+            padding: 1.5rem;
+            margin: 0 1rem 2rem;
+        }
+
+        .btn {
+            width: 100%;
+        }
+
+        .free-note,
+        .simple-note {
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+    }
+</style>

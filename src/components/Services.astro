@@ -1,0 +1,156 @@
+---
+const services = [
+    {
+        title: "Leadership Development",
+        items: [
+            "Developing emotional intelligence and decision-making skills",
+            "Building a culture of accountability and empowerment",
+            "Leading with purpose, vision, and confidence"
+        ]
+    },
+    {
+        title: "Team Coaching",
+        items: [
+            "Improving communication and collaboration",
+            "Creating alignment around shared goals",
+            "Inspiring teams to perform at their best"
+        ]
+    },
+    {
+        title: "Business Consulting",
+        items: [
+            "Streamlining operations for efficiency and growth",
+            "Aligning leadership strategies with business objectives",
+            "Identifying and overcoming operational bottlenecks"
+        ]
+    },
+    {
+        title: "Entrepreneur Mentorship",
+        items: [
+            "Turning challenges into growth opportunities",
+            "Setting and achieving strategic goals",
+            "Balancing business success with personal fulfillment"
+        ]
+    }
+];
+---
+<section id="services" class="section" aria-labelledby="services-title">
+    <div class="container">
+        <h2 id="services-title" class="animated-title">What We Offer</h2>
+        <div class="services-grid" role="list">
+            {services.map(service => (
+                <div class="service-card" role="listitem">
+                    <h3>{service.title}</h3>
+                    <ul aria-label={`${service.title} features`}>
+                        {service.items.map(item => (
+                            <li>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .animated-title {
+        display: inline-block;
+        position: relative;
+        transition: transform 0.3s ease;
+        text-align: center;
+        width: 100%;
+    }
+    .animated-title:hover {
+        transform: scale(1.05);
+        color: var(--primary);
+        animation: pulse 1.5s infinite;
+    }
+    .animated-title::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: -2px;
+        height: 2px;
+        background: var(--primary);
+        transform: scaleX(0);
+        transition: all 0.3s ease;
+    }
+    .animated-title:hover::after {
+        left: 25%;
+        right: 25%;
+        transform: scaleX(1);
+    }
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(255, 20, 147, 0.4);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(255, 20, 147, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(255, 20, 147, 0);
+        }
+    }
+    .services-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    .service-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .service-card:hover {
+        transform: translateY(-4px);
+    }
+    .service-card h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        margin-bottom: 0.75rem;
+        color: var(--text);
+        position: relative;
+        padding-left: 1.5rem;
+        font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    }
+    li:last-child {
+        margin-bottom: 0;
+    }
+    li::before {
+        content: "•";
+        color: var(--primary);
+        position: absolute;
+        left: 0;
+    }
+
+    @media (min-width: 1200px) {
+        .services-grid {
+            max-width: 1000px;
+        }
+        .service-card {
+            padding: 2.5rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .service-card {
+            padding: 1.5rem;
+        }
+    }
+</style>

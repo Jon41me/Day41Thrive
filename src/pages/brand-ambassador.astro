@@ -1,0 +1,270 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FloatingActionButton from '../components/FloatingActionButton.astro';
+
+const partnershipBenefits = [
+    "No commission on referrals – Any business we bring to you is yours, no hidden fees.",
+    "Starts at $1,750/month – A high-value investment in your brand's success.",
+    "1 webinar per month – Exclusive insights and training tailored to your audience.",
+    "1 shout-out per month – Social media and email exposure to boost your brand.",
+    "2 - 1-hour strategy sessions per month – Work directly with us to refine and execute winning strategies.",
+    "We align ONLY with your brand in your category – No conflicts, full commitment.",
+    "Personal reference calls – We take calls as your reference to validate your credibility.",
+    "Logo on all our training materials & handouts – Increased visibility and brand recognition.",
+    "Landing page link on our website – Direct traffic and credibility from our audience.",
+    "Affiliate code for lead tracking – Transparency in performance and ROI.",
+    "We introduce you to contractors looking to scale – Helping you reach new clients and grow.",
+    "Exclusive discount for speaking engagements – Bring us in at a reduced rate for training & events."
+];
+
+const speakingTopics = [
+    "Leadership Development – Build the best leadership team and learn how to delegate effectively.",
+    "Business Scaling – We have scaled and sold multiple businesses, including three of our own. Learn the strategies that work.",
+    "Team Empowerment – Training you to empower your team to succeed, take ownership, and drive results.",
+    "Operational Process Improvements – Streamline workflows, increase efficiency, and maximize profitability.",
+    "Culture & Mindset Development – Build a winning team culture and instill a growth-focused mindset.",
+    "Don't Pay the Dumb Tax – We know what NOT to do. Let us help you avoid costly mistakes and wasted time."
+];
+---
+
+<Layout title="Brand Ambassador Program - Day 41 Thrive">
+    <Header />
+    <main class="brand-ambassador-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">Hire Us as Your Brand Ambassador</h1>
+                <p class="hero-description">Looking to elevate your brand and gain direct access to expert business scaling strategies? Partner with us as your exclusive Brand Ambassador and let's drive real growth together!</p>
+            </div>
+        </section>
+
+        <section class="partnership-section">
+            <div class="container">
+                <h2>What's Included in Your Partnership?</h2>
+                <div class="benefits-grid">
+                    {partnershipBenefits.map(benefit => (
+                        <div class="benefit-card">
+                            <p>{benefit}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="goal-section">
+            <div class="container">
+                <div class="goal-card">
+                    <h2>Our Goal</h2>
+                    <p>We specialize in scaling contractors from $2M to $10M in under 3 years—and we want to help you do the same. By aligning with us, you're gaining a trusted partner who understands the ins and outs of growth, leadership, and optimization.</p>
+                    <div class="contract-note">
+                        <span class="icon">📅</span>
+                        <p>1-Year Contracts Only – We commit to long-term success, not short-term wins.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="speaking-section">
+            <div class="container">
+                <div class="speaking-card">
+                    <h2>Have Us Train or Speak at Your Event</h2>
+                    <p class="speaking-intro">Looking for high-impact training? Bring us in to educate, inspire, and equip your team and client base with actionable strategies that drive real results.</p>
+                    
+                    <div class="pricing-note">
+                        <span class="icon">💰</span>
+                        <p>Starting at $3,500 per day (+ travel expenses)</p>
+                    </div>
+
+                    <h3>We offer customized, high-energy sessions focused on:</h3>
+                    <ul class="topics-list">
+                        {speakingTopics.map(topic => (
+                            <li>{topic}</li>
+                        ))}
+                    </ul>
+
+                    <div class="booking-note">
+                        <span class="icon">📅</span>
+                        <p>Book us today and take your team to the next level!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Let's Scale Together!</h2>
+                <p>Ready to partner with us and take your brand to the next level?</p>
+                <a href="mailto:hello@day41thrive.com" class="btn">Contact us today</a>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .brand-ambassador-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .benefits-grid {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .benefit-card {
+        background: var(--card-bg);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .goal-card,
+    .speaking-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .contract-note,
+    .pricing-note,
+    .booking-note {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        padding: 1rem;
+        background: rgba(255, 20, 147, 0.1);
+        border-radius: 0.5rem;
+    }
+
+    .icon {
+        font-size: 1.5rem;
+    }
+
+    .speaking-intro {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+
+    .topics-list {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+    }
+
+    .topics-list li {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .topics-list li::before {
+        content: "•";
+        color: var(--primary);
+        position: absolute;
+        left: 0;
+    }
+
+    .cta-section {
+        text-align: center;
+        background: rgba(255, 20, 147, 0.05);
+    }
+
+    .cta-section p {
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .benefits-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .goal-card,
+        .speaking-card {
+            padding: 1.5rem;
+            margin: 0 1rem;
+        }
+
+        .contract-note,
+        .pricing-note,
+        .booking-note {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+</style>

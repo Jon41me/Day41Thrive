@@ -1,0 +1,186 @@
+---
+const frameworks = [
+    {
+        title: "TRANSPARENCY",
+        items: [
+            "Being open and honest about the leadership journey",
+            "Sharing successes and failures",
+            "Fostering trust and connection",
+            "Enabling real growth through authenticity"
+        ]
+    },
+    {
+        title: "HUMILITY",
+        items: [
+            "Owning our mistakes",
+            "Learning from experiences",
+            "Growing alongside others",
+            "Leading with authenticity"
+        ]
+    },
+    {
+        title: "RESILIENCE",
+        items: [
+            "Embracing challenges head-on",
+            "Adapting to change",
+            "Rising stronger through experience",
+            "Turning storms into strength"
+        ]
+    },
+    {
+        title: "INSPIRATION",
+        items: [
+            "Seeing failures as stepping stones",
+            "Finding humor in chaos",
+            "Discovering purpose in the journey",
+            "Leading by example"
+        ]
+    },
+    {
+        title: "VALUE-DRIVEN IMPACT",
+        items: [
+            "Delivering real, actionable value",
+            "Sharing meaningful stories",
+            "Teaching practical lessons",
+            "Leading with intention"
+        ]
+    },
+    {
+        title: "EMPOWERMENT",
+        items: [
+            "Embracing your unique path",
+            "Learning from every storm",
+            "Turning trials into triumphs",
+            "Building confidence through growth"
+        ]
+    }
+];
+---
+<section id="framework" class="section" aria-labelledby="framework-title">
+    <div class="container">
+        <h2 id="framework-title" class="animated-title">The THRIVE Framework</h2>
+        <p class="framework-intro">Our proprietary THRIVE Framework is designed to help you lead with clarity and confidence. It's a practical, actionable system that empowers leaders to grow themselves, their teams, and their businesses.</p>
+        
+        <div class="framework-grid">
+            {frameworks.map(framework => (
+                <div class="framework-card">
+                    <h3 class="card-title">{framework.title}</h3>
+                    <ul>
+                        {framework.items.map(item => (
+                            <li>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .animated-title {
+        display: inline-block;
+        position: relative;
+        transition: transform 0.3s ease;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .animated-title:hover {
+        transform: scale(1.05);
+        color: var(--primary);
+        animation: pulse 1.5s infinite;
+    }
+    .animated-title::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: -2px;
+        height: 2px;
+        background: var(--primary);
+        transform: scaleX(0);
+        transition: all 0.3s ease;
+    }
+    .animated-title:hover::after {
+        left: 25%;
+        right: 25%;
+        transform: scaleX(1);
+    }
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(255, 20, 147, 0.4);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(255, 20, 147, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(255, 20, 147, 0);
+        }
+    }
+    .framework-intro {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        text-align: center;
+        padding: 0 1rem;
+    }
+    .framework-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    .framework-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+    .framework-card:hover {
+        transform: translateY(-4px);
+    }
+    .card-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+        color: var(--text);
+        font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    }
+    li::before {
+        content: "•";
+        color: var(--primary);
+        position: absolute;
+        left: 0;
+    }
+
+    @media (min-width: 1200px) {
+        .framework-grid {
+            max-width: 1000px;
+        }
+        .framework-card {
+            padding: 2.5rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .framework-card {
+            padding: 1.5rem;
+        }
+        .card-title {
+            font-size: 2rem;
+        }
+    }
+</style>

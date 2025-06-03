@@ -1,0 +1,155 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import FloatingActionButton from '../../components/FloatingActionButton.astro';
+import BlogContactCTA from '../../components/BlogContactCTA.astro';
+
+const blogPost = {
+    title: "Choosing the Right Roofing CRM: A Comparative Analysis of ServiceTitan, JobNimbus, and Roofr",
+    date: "March 14, 2025",
+    author: "Jonathon Broce"
+};
+---
+
+<Layout title={`${blogPost.title} - Day 41 Thrive`}>
+    <Header />
+    <main class="blog-post">
+        <article class="container">
+            <header class="post-header">
+                <h1>{blogPost.title}</h1>
+                <div class="post-meta">
+                    <span class="date">{blogPost.date}</span>
+                    <span class="author">By {blogPost.author}</span>
+                </div>
+            </header>
+            <div class="post-content">
+                <h2>Introduction</h2>
+                <p>In the modern roofing industry, selecting the appropriate Customer Relationship Management (CRM) system is pivotal for streamlining operations, enhancing customer interactions, and driving business growth. Among the myriad of options available, ServiceTitan, JobNimbus, and Roofr stand out as prominent contenders. Each offers unique features tailored to different business sizes and needs. This analysis delves into these three CRMs, with a particular emphasis on Roofr's emerging capabilities.</p>
+
+                <h2>ServiceTitan: The Comprehensive Enterprise Solution</h2>
+                <h3>Overview</h3>
+                <p>ServiceTitan is a robust enterprise resource planning (ERP) platform designed for large-scale service businesses, including those in the roofing sector. It offers an extensive suite of features encompassing field service management (FSM), advanced reporting, and seamless integration capabilities.</p>
+
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Comprehensive ERP and FSM Functionality: ServiceTitan provides an all-encompassing solution that integrates various business processes, reducing the need for multiple plugins.</li>
+                    <li>Advanced Reporting: The platform offers in-depth analytics and reporting tools, enabling businesses to make data-driven decisions.</li>
+                    <li>VoIP Integrations: ServiceTitan supports Voice over Internet Protocol (VoIP) integrations with platforms like Five9, enhancing communication capabilities.</li>
+                </ul>
+
+                <h3>Considerations</h3>
+                <ul>
+                    <li>Implementation Complexity: Deploying ServiceTitan can be challenging, often requiring dedicated resources and time.</li>
+                    <li>Cost Implications: The platform's extensive features come with a higher price point, making it more suitable for larger enterprises.</li>
+                    <li>Ideal Client Profile: Best suited for companies with revenues exceeding $20 million.</li>
+                </ul>
+
+                <h2>JobNimbus: The Customizable Pioneer for Mid-Sized Roofers</h2>
+                <h3>Overview</h3>
+                <p>JobNimbus has established itself as a leading CRM tailored specifically for the roofing industry. Its customizable nature allows businesses to adapt the platform to their unique workflows and requirements.</p>
+
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Customization: Users can tailor dashboards, workflows, and fields to align with their specific operational needs.</li>
+                    <li>Open API: JobNimbus's open API facilitates integrations with various third-party applications, enhancing its versatility.</li>
+                </ul>
+
+                <h3>Considerations</h3>
+                <ul>
+                    <li>VoIP Limitations: The platform currently lacks native VoIP integrations, which may necessitate additional solutions for comprehensive communication needs.</li>
+                    <li>Ideal Client Profile: Designed for businesses with revenues ranging from $3 million to $12 million.</li>
+                </ul>
+
+                <h2>Roofr: The Innovative Contender with Integrated Estimation Tools</h2>
+                <h3>Overview</h3>
+                <p>Roofr is rapidly emerging as a formidable CRM in the roofing industry, distinguished by its integrated estimation and measurement tools. With a trajectory toward becoming a full enterprise solution by Q4 of 2025, Roofr is positioning itself as a versatile choice for a broad spectrum of roofing businesses.</p>
+
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Instant Estimator and Measurements: Roofr offers native tools for swift and accurate roof measurements and estimates, streamlining the sales process.</li>
+                    <li>Comprehensive Proposal Tool: The platform includes features for creating detailed proposals, facilitating clear communication with clients.</li>
+                    <li>Materials and Labor Orders: Users can manage material and labor orders directly within the platform, enhancing operational efficiency.</li>
+                    <li>Invoicing: Roofr provides integrated invoicing capabilities, simplifying the billing process.</li>
+                </ul>
+
+                <h3>Considerations</h3>
+                <ul>
+                    <li>Developmental Trajectory: As an emerging platform, some advanced features are in development, with full enterprise capabilities anticipated by late 2025.</li>
+                    <li>Ideal Client Profile: Suitable for businesses with revenues between $2 million and over $20 million, offering scalability as companies grow.</li>
+                </ul>
+
+                <h2>Conclusion: Roofr's Ascendancy in the Roofing CRM Landscape</h2>
+                <p>While ServiceTitan and JobNimbus have established themselves as robust solutions for large enterprises and mid-sized businesses respectively, Roofr is distinguishing itself through innovation and integrated functionalities. Its native estimation and measurement tools, combined with a comprehensive proposal system, position it as a forward-thinking choice for roofing professionals. As Roofr continues to evolve toward a full enterprise solution, it presents a compelling option for businesses seeking a modern, integrated CRM tailored to the unique demands of the roofing industry.</p>
+
+                <BlogContactCTA />
+            </div>
+        </article>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .blog-post {
+        padding-top: 80px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    .post-header {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    h1 {
+        color: var(--primary);
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .post-meta {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        color: var(--text);
+        opacity: 0.8;
+    }
+
+    .post-content {
+        color: var(--text);
+        line-height: 1.8;
+    }
+
+    .post-content h2 {
+        color: var(--primary);
+        margin: 2rem 0 1rem;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .post-content h3 {
+        color: var(--primary);
+        margin: 1.5rem 0 1rem;
+        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    }
+
+    .post-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .post-content ul {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .post-content li {
+        margin-bottom: 0.75rem;
+    }
+
+    .post-content strong {
+        color: var(--primary);
+    }
+</style>

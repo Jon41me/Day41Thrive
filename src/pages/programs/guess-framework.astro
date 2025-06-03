@@ -1,0 +1,386 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import FloatingActionButton from '../../components/FloatingActionButton.astro';
+
+const framework = [
+    {
+        letter: "G",
+        title: "Grow",
+        subtitle: "Plant Your SEED 🌱",
+        points: [
+            {
+                title: "Self-Reflect",
+                description: "Identify areas for improvement and recognize your strengths."
+            },
+            {
+                title: "Expand",
+                description: "Broaden your knowledge, seek mentorship, and explore new ideas."
+            },
+            {
+                title: "Evolve",
+                description: "Adapt to challenges, embrace change, and refine your skills."
+            },
+            {
+                title: "Develop",
+                description: "Take intentional steps toward your goals with consistent action."
+            }
+        ]
+    },
+    {
+        letter: "U",
+        title: "Unleash",
+        subtitle: "RISE to Your Potential 🚀",
+        points: [
+            {
+                title: "Recognize",
+                description: "Identify hidden talents and strengths within your team."
+            },
+            {
+                title: "Inspire",
+                description: "Motivate and encourage action with a compelling vision."
+            },
+            {
+                title: "Support",
+                description: "Provide guidance, resources, and a safe space for growth."
+            },
+            {
+                title: "Empower",
+                description: "Delegate responsibilities and trust your team to take ownership."
+            }
+        ]
+    },
+    {
+        letter: "E",
+        title: "Enhance",
+        subtitle: "Find Your FLOW ⚡",
+        points: [
+            {
+                title: "Focus",
+                description: "Prioritize the tasks that move the needle."
+            },
+            {
+                title: "Leverage",
+                description: "Use technology, tools, and systems to work smarter."
+            },
+            {
+                title: "Optimize",
+                description: "Streamline processes and eliminate inefficiencies."
+            },
+            {
+                title: "Work Smart",
+                description: "Avoid burnout by balancing effort with results."
+            }
+        ]
+    },
+    {
+        letter: "S",
+        title: "Strategize",
+        subtitle: "SMART Planning for Success 📈",
+        points: [
+            {
+                title: "Specific",
+                description: "Define clear and precise goals."
+            },
+            {
+                title: "Measurable",
+                description: "Establish key performance indicators (KPIs) to track progress."
+            },
+            {
+                title: "Achievable",
+                description: "Set realistic goals that push the team forward."
+            },
+            {
+                title: "Relevant",
+                description: "Align objectives with the bigger picture."
+            },
+            {
+                title: "Time-bound",
+                description: "Set deadlines to create accountability and momentum."
+            }
+        ]
+    },
+    {
+        letter: "S",
+        title: "Synchronize",
+        subtitle: "Build Your TEAM 🤝",
+        points: [
+            {
+                title: "Trust",
+                description: "Foster open communication and reliability."
+            },
+            {
+                title: "Engage",
+                description: "Actively involve every team member."
+            },
+            {
+                title: "Align",
+                description: "Ensure everyone is working toward a shared vision."
+            },
+            {
+                title: "Mobilize",
+                description: "Take coordinated action to achieve goals."
+            }
+        ]
+    }
+];
+---
+
+<Layout title="The G.U.E.S.S. Framework - Day 41 Thrive">
+    <Header />
+    <main class="program-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">The G.U.E.S.S. Framework</h1>
+                <p class="hero-description">A Leadership Model for Action and Success</p>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-card">
+                    <h2>Leadership Excellence Through G.U.E.S.S.</h2>
+                    <p>Leadership is not just about making decisions—it's about inspiring growth, unlocking potential, optimizing efficiency, developing clear strategies, and fostering teamwork. That's where the G.U.E.S.S. Framework comes in.</p>
+                    
+                    <div class="framework-overview">
+                        <div class="letter-grid">
+                            {framework.map(item => (
+                                <div class="letter-item">
+                                    <span class="letter">{item.letter}</span>
+                                    <span class="word">{item.title}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="framework-section">
+            <div class="container">
+                {framework.map(item => (
+                    <div class="framework-card">
+                        <div class="card-header">
+                            <span class="letter">{item.letter}</span>
+                            <div class="title-group">
+                                <h2>{item.title}</h2>
+                                <h3>{item.subtitle}</h3>
+                            </div>
+                        </div>
+                        <div class="points-grid">
+                            {item.points.map(point => (
+                                <div class="point-card">
+                                    <h4>{point.title}</h4>
+                                    <p>{point.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Transform Your Leadership?</h2>
+                <p>The G.U.E.S.S. Framework isn't just a theory—it's an actionable model for leadership success. Start your journey to becoming a more effective leader today.</p>
+                <a href="mailto:hello@day41thrive.com" class="btn">Schedule a Consultation</a>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .program-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+    }
+
+    .intro-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .framework-overview {
+        margin-top: 2rem;
+        padding: 2rem;
+        background: rgba(255, 20, 147, 0.1);
+        border-radius: 0.5rem;
+    }
+
+    .letter-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .letter-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .letter {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--primary);
+    }
+
+    .word {
+        font-size: 1.1rem;
+        color: var(--text);
+    }
+
+    .framework-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        margin-bottom: 2rem;
+        transition: transform 0.3s ease;
+    }
+
+    .framework-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .title-group h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 0.5rem;
+        text-align: left;
+    }
+
+    .title-group h3 {
+        color: var(--secondary);
+        font-size: 1.25rem;
+    }
+
+    .points-grid {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .point-card {
+        background: rgba(255, 20, 147, 0.1);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    .point-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .point-card h4 {
+        color: var(--primary);
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .cta-section {
+        text-align: center;
+        background: rgba(255, 20, 147, 0.05);
+        padding: 4rem 0;
+    }
+
+    .cta-section h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-section p {
+        max-width: 600px;
+        margin: 0 auto 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .points-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .points-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .intro-card,
+        .framework-card {
+            padding: 1.5rem;
+        }
+
+        .card-header {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .title-group h2 {
+            text-align: center;
+        }
+    }
+</style>

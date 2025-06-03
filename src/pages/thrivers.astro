@@ -1,0 +1,356 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FloatingActionButton from '../components/FloatingActionButton.astro';
+
+// Interface for testimonial data
+interface Testimonial {
+    id: string;           // YouTube video ID
+    name: string;         // Name of the person giving testimonial
+    title: string;        // Their title/role
+    company: string;      // Their company
+    description: string;  // Brief description of their story
+}
+
+// Array of testimonials - add new ones here
+const testimonials: Testimonial[] = [
+    {
+        id: "7SQLE_2kCnk",
+        name: "Bruce Boyd",
+        title: "CEO",
+        company: "BulletpROOF",
+        description: "Bruce Boyd at BulletpROOF is a driven entrepreneur and industry expert focused on building resilient businesses and equipping leaders with the mindset and tools to thrive."
+    },
+    {
+        id: "H82DiczKLFo",
+        name: "Crystal Harwell",
+        title: "Xactimate Certified Trainer",
+        company: "",
+        description: "Crystal Harwell shares her transformative journey and success story working with Day 41 Thrive's coaching programs."
+    },
+    {
+        id: "Mcy6u4mq7M4",
+        name: "Kent Panovec",
+        title: "COO",
+        company: "Maven Roofing",
+        description: "Kent at Maven Roofing is a passionate industry leader dedicated to delivering top-quality roofing solutions while mentoring and empowering others to succeed in business and leadership."
+    },
+    {
+        id: "21mfrs1dw6k",
+        name: "Chuck Thokey",
+        title: "Founder",
+        company: "TOP REP",
+        description: "Chuck Thokey at Top Rep is a top sales trainer, keynote speaker, and mentor, dedicated to helping sales professionals and business leaders dominate their industries with proven strategies."
+    },
+    {
+        id: "bLh2kusX9qQ",
+        name: "Rema Hilal",
+        title: "General Manager",
+        company: "",
+        description: "Rema Hilal brings her expertise and leadership to Maycon Construction, demonstrating how Day 41 Thrive's principles can transform business operations and drive exceptional results."
+    },
+    {
+        id: "21mfrs1dw6k",
+        name: "Chuck Thokey",
+        title: "Founder",
+        company: "TOP REP",
+        description: "Chuck Thokey at Top Rep is a top sales trainer, keynote speaker, and mentor, dedicated to helping sales professionals and business leaders dominate their industries with proven strategies."
+    },
+    {
+        id: "n8m8KrnjiTE",
+        name: "Andy Meredith",
+        title: "Owner",
+        company: "Meredith Cleaning",
+        description: "Andy Meredith is rising as a powerful leader through Day 41 Thrive, embracing its principles to sharpen his skills, inspire others, and drive success with confidence and purpose."
+    },
+    {
+        id: "J1Rr-YXisN8",
+        name: "Erich Vozzella",
+        title: "Sales Leader",
+        company: "",
+        description: "Erich Vozzella demonstrates the power of Day 41 Thrive's coaching programs through his journey of personal growth and leadership development, inspiring others to reach their full potential."
+    },
+    {
+        id: "KqUutcpAsp0",
+        name: "Sean Wisenbarger",
+        title: "Production Manager",
+        company: "",
+        description: "Sean Wisenbarger shares his success story and the transformative impact of Day 41 Thrive's coaching programs on his leadership journey and business growth."
+    },
+    {
+        id: "xbQhE9iJTCU",
+        name: "Kasey Luft",
+        title: "Owner",
+        company: "Clientric",
+        description: "Kasey Luft and Day 41 Thrive collaborated to streamline and optimize business processes, creating efficient systems that drive growth, scalability, and long-term success."
+    },
+    {
+        id: "ywLi9rAt0Bo",
+        name: "John Stokes",
+        title: "CEO",
+        company: "Guaranteed Estimates",
+        description: "John Stokes has been working with Day 41 Thrive for years, leveraging its insights and strategies to refine leadership, strengthen business operations, and drive lasting success."
+    },
+    {
+        id: "0pANXXKI_5k",
+        name: "Brick Boss",
+        title: "CEO",
+        company: "Boss Roofing",
+        description: "Brick at Boss Roofing has been a close friend and mentee for years, growing alongside Day 41 Thrive through shared leadership insights, mentorship, and a commitment to building a thriving business."
+    },
+    {
+        id: "PRIKkrOoc1g",
+        name: "IV Dickson",
+        title: "Chief Innovation Officer (CIO)",
+        company: "",
+        description: "IV Dickson demonstrates the transformative power of Day 41 Thrive's coaching programs, sharing his journey of growth and success in leadership and business development."
+    }
+];
+---
+
+<Layout title="Thrivers - Day 41 Thrive">
+    <Header />
+    <main class="thrivers-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">Thrivers 🚀</h1>
+                <p class="hero-description">Welcome to the Thrivers page—where leaders, entrepreneurs, and game-changers share how Day 41 Thrive is transforming the way they grow, lead, and succeed.</p>
+                <p class="hero-subtitle">From industry experts to business owners, these voices prove that thriving isn't just a goal—it's a mindset. Watch their stories, get inspired, and join the movement!</p>
+                <div class="hero-cta">
+                    <p class="cta-text">💡 Are you ready to thrive beyond survival?</p>
+                    <p class="cta-subtext">👉 Check out the latest testimonials below!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="testimonials-grid">
+                    {testimonials.map(testimonial => (
+                        <div class="testimonial-card">
+                            <div class="video-container">
+                                <iframe
+                                    src={`https://www.youtube.com/embed/${testimonial.id}`}
+                                    title={`${testimonial.name}'s Testimonial`}
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                    loading="lazy"
+                                ></iframe>
+                            </div>
+                            <div class="testimonial-content">
+                                <h3>{testimonial.name}</h3>
+                                <p class="title">{testimonial.title}</p>
+                                <p class="company">{testimonial.company}</p>
+                                <p class="description">{testimonial.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2>Ready to Join the Thrivers?</h2>
+                    <p>Transform your business and leadership journey with Day 41 Thrive.</p>
+                    <a href="/contact" class="btn">Contact Us Today</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .thrivers-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: clamp(1.1rem, 2vw, 1.25rem);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        font-size: clamp(1rem, 1.5vw, 1.1rem);
+        line-height: 1.6;
+    }
+
+    .hero-cta {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .cta-text {
+        color: var(--primary);
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    .cta-subtext {
+        color: white;
+        font-size: clamp(1rem, 2vw, 1.25rem);
+    }
+
+    .testimonials-section {
+        padding: 4rem 0;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .testimonial-card {
+        background: var(--card-bg);
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .testimonial-content {
+        padding: 1.5rem;
+    }
+
+    .testimonial-content h3 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .title {
+        color: var(--secondary);
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+
+    .company {
+        color: var(--text);
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        color: var(--text);
+        line-height: 1.6;
+    }
+
+    .cta-section {
+        padding: 4rem 0;
+        background: rgba(255, 20, 147, 0.05);
+    }
+
+    .cta-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .cta-card h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 1rem;
+    }
+
+    .cta-card p {
+        margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+        .testimonials-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .testimonials-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .testimonial-content {
+            padding: 1rem;
+        }
+
+        .cta-card {
+            margin: 0 1rem;
+            padding: 1.5rem;
+        }
+    }
+</style>

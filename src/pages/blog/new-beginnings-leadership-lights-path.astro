@@ -1,0 +1,188 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import FloatingActionButton from '../../components/FloatingActionButton.astro';
+import BlogContactCTA from '../../components/BlogContactCTA.astro';
+
+const blogPost = {
+    title: "New Beginnings: How Leadership Lights the Path to Thriving",
+    date: "April 30, 2025",
+    author: "Jonathon Broce"
+};
+---
+
+<Layout title={`${blogPost.title} - Day 41 Thrive`}>
+    <Header />
+    <main class="blog-post">
+        <article class="container">
+            <header class="post-header">
+                <h1>{blogPost.title}</h1>
+                <div class="post-meta">
+                    <span class="date">{blogPost.date}</span>
+                    <span class="author">By {blogPost.author}</span>
+                </div>
+            </header>
+            <div class="post-content">
+                <h2>Introduction: Every New Chapter Needs a Leader</h2>
+                <p>Whether you're starting a new role, launching a new division, or picking yourself back up after a tough season—new beginnings require more than just courage… they require leadership.</p>
+                
+                <p>At Day 41 Thrive, we believe leadership isn't just for the boardroom or the big job titles. Leadership is the steady hand that navigates change, the voice that brings clarity in chaos, and the vision that says, "We're not just going to survive this—we're going to thrive."</p>
+
+                <h2>Why New Beginnings Are Leadership Moments</h2>
+                <p>Every new beginning comes with:</p>
+                <ul>
+                    <li>Uncertainty</li>
+                    <li>Transition</li>
+                    <li>Resistance</li>
+                    <li>Opportunity</li>
+                </ul>
+
+                <p>In those first few steps of the unknown, people look for more than answers. They look for anchors. They look for clarity. They look for leaders.</p>
+
+                <p>Leadership turns restarts into relaunches.</p>
+
+                <p>You don't need to have all the answers. You just need the willingness to lead—yourself and others—through the first few steps.</p>
+
+                <h2>The Three Truths of Leading Through New Beginnings</h2>
+                <h3>1. Start with Self-Leadership</h3>
+                <p>Before you lead a team, lead yourself. That means:</p>
+                <ul>
+                    <li>✅ Owning your mindset</li>
+                    <li>✅ Defining your values</li>
+                    <li>✅ Setting a clear vision for what's next</li>
+                </ul>
+
+                <p>New beginnings can be overwhelming—but when your internal compass is steady, the direction becomes clear.</p>
+
+                <p>"You can't steer the ship if you haven't set the course."</p>
+
+                <h3>2. Cast Vision, Not Confusion</h3>
+                <p>When things are new, people don't need more noise—they need clarity. Leadership means cutting through the fog with:</p>
+                <ul>
+                    <li>A clear mission</li>
+                    <li>Realistic expectations</li>
+                    <li>Purposeful direction</li>
+                </ul>
+
+                <p>You don't have to know every detail. But you do need to say: "This is where we're going—and this is why it matters."</p>
+
+                <h3>3. Create Safety, Then Momentum</h3>
+                <p>In seasons of change, psychological safety creates traction. People need to know:</p>
+                <ul>
+                    <li>It's okay to ask questions</li>
+                    <li>Failure is part of forward</li>
+                    <li>Their voice matters</li>
+                </ul>
+
+                <p>Once safety is established, you can build momentum through:</p>
+                <ul>
+                    <li>✅ Quick wins</li>
+                    <li>✅ Celebrating effort</li>
+                    <li>✅ Consistently showing up</li>
+                </ul>
+
+                <p>Leadership doesn't always roar. Sometimes it whispers, "We've got this. Let's keep going."</p>
+
+                <h2>Leadership Isn't a Job Title—It's a Choice</h2>
+                <p>New beginnings don't wait for permission. They arrive, often without warning. And in those moments, leadership becomes the difference between spinning in circles and stepping into growth.</p>
+
+                <p>At Day 41 Thrive, we've helped business owners, team leaders, and everyday difference-makers navigate the unknown with confidence—because we've lived it ourselves.</p>
+
+                <p>We believe:</p>
+                <ul>
+                    <li>Leadership is built, not born</li>
+                    <li>Every setback can be a setup</li>
+                    <li>And Day 41 is always waiting—you just have to take that next step</li>
+                </ul>
+
+                <h2>Final Thoughts: Thrive Forward</h2>
+                <p>Whatever new beginning you're facing—a new team, a new vision, a new challenge—remember this:</p>
+
+                <p>📌 You don't have to be perfect. You just have to lead.</p>
+
+                <p>New beginnings are where leaders are forged. And on the other side of the unknown is momentum, clarity, and the kind of growth you never imagined.</p>
+
+                <p>So take the step. Lead the way. And don't just start again.</p>
+
+                <p>Start stronger.</p>
+
+                <p>Day 41 Thrive — Helping You Lead Into What's Next.</p>
+
+                <BlogContactCTA />
+            </div>
+        </article>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .blog-post {
+        padding-top: 80px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    .post-header {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    h1 {
+        color: var(--primary);
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .post-meta {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        color: var(--text);
+        opacity: 0.8;
+    }
+
+    .post-content {
+        color: var(--text);
+        line-height: 1.8;
+    }
+
+    .post-content h2 {
+        color: var(--primary);
+        margin: 2rem 0 1rem;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .post-content h3 {
+        color: var(--primary);
+        margin: 1.5rem 0 1rem;
+        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    }
+
+    .post-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .post-content ul {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .post-content li {
+        margin-bottom: 0.75rem;
+    }
+
+    .post-content strong {
+        color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 1.5rem;
+        }
+    }
+</style>

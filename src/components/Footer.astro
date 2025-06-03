@@ -1,0 +1,69 @@
+---
+import SocialMediaLinks from './SocialMediaLinks.astro';
+const currentYear = new Date().getFullYear();
+---
+<footer class="footer">
+    <div class="container">
+        <SocialMediaLinks />
+        <nav class="footer-nav">
+            <a href="/privacy" class="footer-link">Privacy Policy</a>
+            <span class="separator">|</span>
+            <a href="/#contact" class="footer-link">Contact</a>
+        </nav>
+        <p class="copyright">
+            © {currentYear} Day 41 Thrive. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        background: #000000;
+        padding: 2rem 0;
+        border-top: 1px solid var(--primary);
+        margin-top: auto;
+        color: white;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .footer-nav {
+        margin: 1rem 0;
+        padding: 1rem 0;
+        border-top: 1px solid rgba(255, 20, 147, 0.2);
+    }
+
+    .footer-link {
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+        padding: 0.5rem;
+    }
+
+    .footer-link:hover {
+        color: var(--primary);
+    }
+
+    .separator {
+        color: white;
+        opacity: 0.5;
+        margin: 0 0.5rem;
+    }
+
+    .copyright {
+        color: white;
+        font-size: 0.9rem;
+        margin: 0;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 20, 147, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .footer {
+            padding: 1.5rem 0;
+        }
+    }
+</style>

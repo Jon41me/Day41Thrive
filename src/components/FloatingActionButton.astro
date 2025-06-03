@@ -1,0 +1,37 @@
+---
+---
+<a href="/contact" id="fab" class="fab" aria-label="Contact Us">
+    <span class="fab-icon">📩</span>
+    <span class="fab-text">Contact Us</span>
+</a>
+
+<style>
+    /* Keeping existing styles */
+    .fab {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background-color: var(--primary);
+        color: var(--text);
+        border: none;
+        border-radius: 50px;
+        padding: 0.8rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        z-index: 999;
+        box-shadow: 0 4px 12px rgba(255, 20, 147, 0.3);
+        transition: all 0.3s ease;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
+    }
+
+    .fab:hover {
+        background-color: var(--secondary);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(255, 20, 147, 0.4);
+    }
+</style>

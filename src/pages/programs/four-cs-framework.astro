@@ -1,0 +1,320 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import FloatingActionButton from '../../components/FloatingActionButton.astro';
+
+const pillars = [
+    {
+        title: "Capture",
+        subtitle: "Marketing",
+        description: "The first step in any successful business is capturing the attention of your ideal audience. With a focused marketing strategy, you can ensure that the right people find your services at the right time.",
+        points: [
+            "Branding that stands out in your market.",
+            "Digital marketing strategies, including SEO, PPC, and social media campaigns.",
+            "Lead generation systems to keep your pipeline full.",
+            "Capture ensures you are not just getting leads but the right leads."
+        ]
+    },
+    {
+        title: "Convert",
+        subtitle: "Sales",
+        description: "Once you have captured attention, it is time to convert those prospects into paying customers. Our sales systems and training programs are designed to help your team close more deals with confidence.",
+        points: [
+            "Proven sales presentations tailored to your industry.",
+            "Exclusive trademarked systems, like \"We Do This Every Shingle Day!\"",
+            "Customer engagement strategies that foster trust and loyalty.",
+            "Convert empowers your team to maximize every opportunity."
+        ]
+    },
+    {
+        title: "Create",
+        subtitle: "Production",
+        description: "Production is where your business truly shines. It is not just about delivering a product or service—it is about creating an exceptional experience that keeps customers coming back.",
+        points: [
+            "Streamlined production processes for efficiency and quality.",
+            "Scheduling and resource management to meet deadlines.",
+            "Customer satisfaction strategies to ensure every job is a success.",
+            "Create helps you build a reputation for excellence."
+        ]
+    },
+    {
+        title: "Control",
+        subtitle: "Admin",
+        description: "Effective administration and management are the backbone of any thriving business. By implementing the right tools and systems, you can take control of your operations and make data-driven decisions.",
+        points: [
+            "Financial management, including budgeting and forecasting.",
+            "Tracking KPIs to measure performance.",
+            "Workflow automation to save time and reduce errors.",
+            "Control gives you the clarity to grow with confidence."
+        ]
+    }
+];
+
+const benefits = [
+    {
+        title: "Streamlined Processes",
+        description: "Optimize your operations for maximum efficiency."
+    },
+    {
+        title: "Increased Revenue",
+        description: "Boost your bottom line through better marketing and sales."
+    },
+    {
+        title: "Better Control",
+        description: "Gain clarity and confidence in your business decisions."
+    }
+];
+---
+
+<Layout title="The 4 C's of Business Framework - Day 41 Thrive">
+    <Header />
+    <main class="program-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">The 4 C's of Business Framework</h1>
+                <p class="hero-description">Transforming Construction and Home Service Companies</p>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-card">
+                    <h2>Explore the Framework</h2>
+                    <p>At DAY 41 THRIVE, we understand that running a successful construction or home service business requires a solid foundation and a clear process. The 4 C's—Capture, Convert, Create, Control—represent the essential pillars of a thriving business.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pillars-section">
+            <div class="container">
+                <div class="pillars-grid">
+                    {pillars.map(pillar => (
+                        <div class="pillar-card">
+                            <div class="pillar-header">
+                                <h2>
+                                    <span class="pillar-letter">{pillar.title[0]}</span>
+                                    {pillar.title}
+                                </h2>
+                                <h3>{pillar.subtitle}</h3>
+                            </div>
+                            <p class="pillar-description">{pillar.description}</p>
+                            <ul class="pillar-points">
+                                {pillar.points.map(point => (
+                                    <li>{point}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <h2>Why the 4 C's Framework Works</h2>
+                <div class="benefits-grid">
+                    {benefits.map(benefit => (
+                        <div class="benefit-card">
+                            <h3>{benefit.title}</h3>
+                            <p>{benefit.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Master the 4 C's?</h2>
+                <p>Let us work together to capture opportunities, convert prospects, create excellence, and take control of your business growth.</p>
+                <a href="mailto:hello@day41thrive.com" class="btn">Get Started Today</a>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .program-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .intro-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .pillars-grid {
+        display: grid;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .pillar-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .pillar-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .pillar-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .pillar-letter {
+        color: var(--primary);
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-right: 0.5rem;
+    }
+
+    h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 0.5rem;
+    }
+
+    h3 {
+        color: var(--secondary);
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .pillar-description {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .pillar-points {
+        list-style: none;
+        padding: 0;
+    }
+
+    .pillar-points li {
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .pillar-points li::before {
+        content: "•";
+        color: var(--primary);
+        position: absolute;
+        left: 0;
+    }
+
+    .benefits-grid {
+        display: grid;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .benefit-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .cta-section {
+        text-align: center;
+        background: rgba(255, 20, 147, 0.05);
+    }
+
+    .cta-section p {
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (min-width: 768px) {
+        .pillars-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .benefits-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .pillars-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .intro-card,
+        .pillar-card,
+        .benefit-card {
+            padding: 1.5rem;
+        }
+    }
+</style>

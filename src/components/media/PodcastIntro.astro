@@ -1,0 +1,94 @@
+---
+---
+<section class="podcast-intro section">
+    <div class="container">
+        <h1 class="animated-title">Day 41 Thrive Podcast</h1>
+        <h2 class="subtitle">The Failure Formula</h2>
+        <div class="intro-content">
+            <p>Welcome to the Day 41 Thrive Podcast</p>
+            <p>Leadership is a journey filled with challenges, victories, and growth—and that's exactly what we explore on the Day 41 Thrive Podcast. Inspired by the idea that true transformation begins after the storm, we dive deep into the real stories of leaders who've faced adversity, learned from their struggles, and emerged stronger.</p>
+            <p>Whether you're a seasoned leader, an entrepreneur, or just stepping into leadership for the first time, our episodes offer practical wisdom, inspiring stories, and actionable insights to help you thrive in your personal and professional life.</p>
+            <p>Join us as we uncover the lessons learned on the other side of resilience, one story at a time. Because thriving isn't just about surviving—it's about stepping boldly into Day 41 and beyond.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .podcast-intro {
+        text-align: center;
+        padding: 6rem 0 3rem;
+    }
+    .animated-title {
+        display: inline-block;
+        position: relative;
+        transition: transform 0.3s ease;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        color: var(--primary);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+    .subtitle {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        color: var(--secondary);
+        margin-bottom: 2rem;
+        font-weight: 600;
+    }
+    .animated-title:hover {
+        transform: scale(1.05);
+        color: var(--primary);
+        animation: pulse 1.5s infinite;
+    }
+    .animated-title::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: -2px;
+        height: 2px;
+        background: var(--primary);
+        transform: scaleX(0);
+        transition: all 0.3s ease;
+    }
+    .animated-title:hover::after {
+        left: 25%;
+        right: 25%;
+        transform: scaleX(1);
+    }
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(255, 20, 147, 0.4);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(255, 20, 147, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(255, 20, 147, 0);
+        }
+    }
+    .intro-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: var(--card-bg);
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+    }
+    p {
+        color: var(--text);
+        margin-bottom: 1.5rem;
+        font-size: clamp(1rem, 1.5vw, 1.1rem);
+        line-height: 1.6;
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+        .podcast-intro {
+            padding: 4rem 0 2rem;
+        }
+        .animated-title {
+            padding: 0 1rem;
+        }
+    }
+</style>

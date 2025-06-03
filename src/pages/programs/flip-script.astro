@@ -1,0 +1,379 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import FloatingActionButton from '../../components/FloatingActionButton.astro';
+
+const insuranceModelChallenges = [
+    {
+        title: "Unpredictability",
+        description: "Storms are not guaranteed, leaving businesses dependent on weather patterns."
+    },
+    {
+        title: "Insurance Hassles",
+        description: "Delays, denials, and ever-changing policies create frustration and inefficiencies."
+    },
+    {
+        title: "Short-Term Focus",
+        description: "Once the storm leaves, so does the demand, forcing businesses into a feast-or-famine cycle."
+    }
+];
+
+const retailMindsetPoints = [
+    "Market directly to homeowners instead of relying on storm-related leads.",
+    "Position your services as high-quality investments rather than insurance-based repairs.",
+    "Shift the conversation from \"your insurance will cover this\" to \"here is why this investment benefits you.\"",
+    "Build long-term relationships with customers for repeat business and referrals."
+];
+
+const salesProcess = [
+    {
+        title: "Presentation Skills",
+        description: "Teach your team to confidently present retail solutions during in-home consultations."
+    },
+    {
+        title: "Pricing Strategies",
+        description: "Help you price your services competitively while maintaining profitability."
+    },
+    {
+        title: "Objection Handling",
+        description: "Train your team to overcome objections like \"I will wait for a storm\" or \"It is too expensive.\""
+    },
+    {
+        title: "Value Proposition",
+        description: "Develop compelling reasons why homeowners should choose your services now."
+    }
+];
+
+const services = [
+    {
+        title: "Repair Solutions",
+        description: "Offer cost-effective repairs as an alternative to full replacements."
+    },
+    {
+        title: "Rejuvenation Services",
+        description: "Educate customers on extending the life of their roofs with advanced coatings and treatments."
+    },
+    {
+        title: "Upselling Opportunities",
+        description: "Show homeowners how smaller investments now can prevent costly problems later."
+    },
+    {
+        title: "Maintenance Programs",
+        description: "Create recurring revenue through annual maintenance contracts."
+    }
+];
+
+const marketingEfforts = [
+    {
+        title: "Digital Campaigns",
+        description: "Leverage SEO, PPC, and social media to reach homeowners directly."
+    },
+    {
+        title: "Community Engagement",
+        description: "Establish your brand as a trusted, local expert."
+    },
+    {
+        title: "Lead Generation",
+        description: "Implement systems that ensure a steady pipeline of retail customers."
+    },
+    {
+        title: "Brand Building",
+        description: "Create a strong local presence that homeowners trust and recognize."
+    }
+];
+
+const results = [
+    {
+        title: "Higher Profit Margins",
+        description: "Retail sales often lead to better pricing and less negotiation than insurance work."
+    },
+    {
+        title: "Steady Revenue Streams",
+        description: "Year-round marketing and sales create consistent cash flow."
+    },
+    {
+        title: "Stronger Brand Reputation",
+        description: "Homeowners see you as a trusted advisor, not just a storm chaser."
+    }
+];
+---
+
+<Layout title="Flip the Script - Day 41 Thrive">
+    <Header />
+    <main class="program-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">Flip the Script</h1>
+                <p class="hero-description">From Insurance to Retail: Survive and Thrive After the Storm</p>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-card">
+                    <h2>Transform Your Business</h2>
+                    <p>At DAY 41 THRIVE, we understand the challenges that roofing contractors face when the storm season ends and insurance restoration work dries up. Our Flip the Script program is designed to help roofing contractors break free from this cycle by transitioning to a retail-focused, in-home sales model.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="challenges-section">
+            <div class="container">
+                <h2>The Problem with the Insurance-Only Model</h2>
+                <p class="section-intro">Storm restoration work can be lucrative, but it's also unpredictable and unsustainable as a long-term business model.</p>
+                
+                <div class="challenges-grid">
+                    {insuranceModelChallenges.map(challenge => (
+                        <div class="challenge-card">
+                            <h3>{challenge.title}</h3>
+                            <p>{challenge.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="mindset-section">
+            <div class="container">
+                <h2>Develop a Retail Mindset</h2>
+                <div class="mindset-grid">
+                    {retailMindsetPoints.map(point => (
+                        <div class="mindset-card">
+                            <p>{point}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="sales-section">
+            <div class="container">
+                <h2>Build an In-Home Sales Process</h2>
+                <div class="sales-grid">
+                    {salesProcess.map(process => (
+                        <div class="process-card">
+                            <h3>{process.title}</h3>
+                            <p>{process.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="container">
+                <h2>Offer Repair and Rejuvenation Services</h2>
+                <div class="services-grid">
+                    {services.map(service => (
+                        <div class="service-card">
+                            <h3>{service.title}</h3>
+                            <p>{service.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="marketing-section">
+            <div class="container">
+                <h2>Transition Marketing Efforts</h2>
+                <div class="marketing-grid">
+                    {marketingEfforts.map(effort => (
+                        <div class="marketing-card">
+                            <h3>{effort.title}</h3>
+                            <p>{effort.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="container">
+                <h2>The Results of Flipping the Script</h2>
+                <div class="results-grid">
+                    {results.map(result => (
+                        <div class="result-card">
+                            <h3>{result.title}</h3>
+                            <p>{result.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Flip the Script?</h2>
+                <p>The storm may leave your area, but your business doesn't have to leave with it. Transform your company into a year-round success story.</p>
+                <a href="mailto:hello@day41thrive.com" class="btn">Start Your Transformation</a>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .program-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .intro-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .section-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .challenges-grid,
+    .mindset-grid,
+    .sales-grid,
+    .services-grid,
+    .marketing-grid,
+    .results-grid {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .challenge-card,
+    .mindset-card,
+    .process-card,
+    .service-card,
+    .marketing-card,
+    .result-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .challenge-card:hover,
+    .mindset-card:hover,
+    .process-card:hover,
+    .service-card:hover,
+    .marketing-card:hover,
+    .result-card:hover {
+        transform: translateY(-4px);
+    }
+
+    h3 {
+        color: var(--primary);
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .cta-section {
+        text-align: center;
+        background: rgba(255, 20, 147, 0.05);
+    }
+
+    .cta-section p {
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .challenges-grid,
+        .results-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .mindset-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .sales-grid,
+        .services-grid,
+        .marketing-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .sales-grid,
+        .services-grid,
+        .marketing-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .intro-card,
+        .challenge-card,
+        .mindset-card,
+        .process-card,
+        .service-card,
+        .marketing-card,
+        .result-card {
+            padding: 1.5rem;
+        }
+    }
+</style>

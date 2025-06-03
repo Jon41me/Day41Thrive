@@ -1,0 +1,138 @@
+/* Base Layout */
+.section {
+    position: relative;
+    padding: var(--section-padding) 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Card Base */
+.card {
+    background: var(--card-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--primary);
+    padding: var(--card-padding);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* Grid System */
+.grid {
+    display: grid;
+    gap: var(--grid-gap);
+}
+
+/* Flex Utilities */
+.flex {
+    display: flex;
+    gap: var(--grid-gap);
+}
+
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.flex-wrap { flex-wrap: wrap; }
+
+/* Spacing Utilities */
+.gap-sm { gap: calc(var(--grid-gap) * 0.5); }
+.gap-md { gap: var(--grid-gap); }
+.gap-lg { gap: calc(var(--grid-gap) * 2); }
+
+.p-sm { padding: calc(var(--card-padding) * 0.5); }
+.p-md { padding: var(--card-padding); }
+.p-lg { padding: calc(var(--card-padding) * 2); }
+
+/* Page Structure */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Focus States */
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Performance Optimizations */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .section {
+        padding: calc(var(--section-padding) * 0.75) 0;
+    }
+
+    .card {
+        padding: calc(var(--card-padding) * 0.75);
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .section {
+        padding: calc(var(--section-padding) * 0.85) 0;
+    }
+    
+    .flex.tablet-wrap {
+        flex-wrap: wrap;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .card:hover {
+        transform: none;
+    }
+    
+    a:hover, button:hover {
+        transition: none;
+    }
+}

@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import PricingCard from '../components/PricingCard.astro';
+
+const packages = [
+    {
+        title: "THRIVE Foundations",
+        description: "Online self-guided training modules designed to help you master the principles of the THRIVE Framework at your own pace. This package is perfect for leaders who prefer flexibility and independent learning.",
+        pricing: {
+            weekly: "$41",
+            monthly: "$175"
+        }
+    },
+    {
+        title: "THRIVE Masterclass",
+        description: "Everything included in Foundations ($41/week) plus weekly 1-hour group webinars segmented by customer group to foster collaboration and provide personalized guidance in a community setting. Masterclass $41 + Foundations $41 = $82 week. Ideal for leaders looking for more interaction and accountability.",
+        pricing: {
+            weekly: "$82",
+            monthly: "$350"
+        }
+    },
+    {
+        title: "THRIVE Accelerator",
+        description: "All the benefits of Masterclass, combined with 1-on-1 weekly coaching sessions tailored to your specific goals and challenges. Foundations $41 + Masterclass $41 + Accelerator $410 = $492 week. This package provides intensive, personalized support to fast-track your leadership growth and business results.",
+        pricing: {
+            weekly: "$492",
+            monthly: "$2,132"
+        }
+    },
+    {
+        title: "THRIVE Enterprise Transformation",
+        description: "The ultimate transformation package includes everything in Foundations, Masterclass, and Accelerator, plus 4 FULL on-site days per month for 6 - 12 months, providing hands-on, in-depth support to align and elevate your entire organization. It is perfect for enterprises aiming for comprehensive change and high-impact results.",
+        pricing: {
+            weekly: "$9,500",
+            monthly: "$41,000"
+        }
+    }
+];
+---
+
+<Layout title="Day 41 Thrive - Investment Plans">
+    <Header />
+    <main class="rates-page">
+        <section class="section" aria-labelledby="rates-title">
+            <div class="container">
+                <h1 id="rates-title">Your Leadership Investment</h1>
+                <p class="intro">At Day 41 Thrive, we believe investing in your leadership and team development is the first step toward achieving extraordinary results. Our tailored packages are designed to meet you where you are and help you grow into the leader and organization you aspire to be.</p>
+                
+                <div class="pricing-grid">
+                    {packages.map(pkg => (
+                        <PricingCard {...pkg} />
+                    ))}
+                </div>
+
+                <div class="cta-section">
+                    <h2>Choose Your Investment in Success</h2>
+                    <p>Your leadership journey begins with the decision to invest in your future. Whether you're building a foundation or ready for a full-scale transformation, Day 41 Thrive has a package designed to help you achieve your goals.</p>
+                    <a href="/contact" class="btn">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+    .rates-page {
+        padding-top: 80px;
+    }
+    .intro {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        text-align: center;
+        padding: 0 1rem;
+    }
+    .pricing-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto 4rem;
+        padding: 0 1rem;
+    }
+    .cta-section {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: var(--card-bg);
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+    }
+    .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background: var(--primary);
+        color: white;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    .btn:hover {
+        background: var(--secondary);
+        transform: translateY(-2px);
+    }
+
+    @media (min-width: 768px) {
+        .pricing-grid {
+            max-width: 1000px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .cta-section {
+            margin: 0 1rem;
+            padding: 1.5rem;
+        }
+    }
+</style>

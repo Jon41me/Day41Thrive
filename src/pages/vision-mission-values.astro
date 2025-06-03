@@ -1,0 +1,298 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FloatingActionButton from '../components/FloatingActionButton.astro';
+
+const thriveValues = [
+    {
+        letter: "T",
+        title: "Transparency",
+        emoji: "🔍",
+        tagline: "Clarity builds trust.",
+        description: "We believe in open, honest, and direct communication. Transparency fosters strong relationships, accountability, and informed decision-making—allowing businesses to grow with confidence."
+    },
+    {
+        letter: "H",
+        title: "Humility",
+        emoji: "🤝",
+        tagline: "Stay grounded, stay growing.",
+        description: "We lead with a learner's mindset. By recognizing that there's always room for improvement, we approach every challenge with openness, adaptability, and a commitment to continuous growth."
+    },
+    {
+        letter: "R",
+        title: "Resilience",
+        emoji: "⚡",
+        tagline: "Strength through challenges.",
+        description: "Scaling a business isn't easy—but we thrive under pressure. We embrace obstacles as opportunities, push through setbacks, and build companies that are prepared to withstand any storm."
+    },
+    {
+        letter: "I",
+        title: "Inspiration",
+        emoji: "🚀",
+        tagline: "Lead by example, uplift by action.",
+        description: "We ignite motivation and passion in those we serve. By demonstrating excellence and a relentless pursuit of success, we inspire businesses to reach their full potential."
+    },
+    {
+        letter: "V",
+        title: "Value-Driven Impact",
+        emoji: "🎯",
+        tagline: "Results that matter.",
+        description: "Every decision, strategy, and action we take is focused on delivering measurable, meaningful impact. We don't chase vanity metrics—we create real value that drives sustainable growth."
+    },
+    {
+        letter: "E",
+        title: "Empowerment",
+        emoji: "💡",
+        tagline: "Unlocking potential at every level.",
+        description: "Our mission is to equip leaders and teams with the tools, confidence, and strategies to take ownership of their success. We empower businesses to operate independently, scale effectively, and thrive long-term."
+    }
+];
+---
+
+<Layout title="Vision, Mission, & Core Values - Day 41 Thrive">
+    <Header />
+    <main class="vision-mission-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">Vision, Mission, & Core Values</h1>
+            </div>
+        </section>
+
+        <section class="vision-section">
+            <div class="container">
+                <div class="content-card">
+                    <h2>Vision Statement</h2>
+                    <p class="vision-quote">"Empowering construction businesses to scale with clarity, efficiency, and purpose—making the complicated simple."</p>
+                    
+                    <p>At DAY 41 Thrive, we envision a world where construction-related companies no longer struggle with inefficiencies, leadership gaps, and operational bottlenecks. We streamline growth by providing expert leadership, proven systems, and strategic execution—so business owners can focus on what they do best while we take care of the rest.</p>
+
+                    <div class="thrive-mindset">
+                        <h3>We achieve this by fostering a THRIVE mindset:</h3>
+                        <ul>
+                            <li>✅ Transparency – We build trust through clear and honest communication.</li>
+                            <li>✅ Humility – We embrace a growth mindset, always learning and adapting.</li>
+                            <li>✅ Resilience – We navigate challenges with strength and determination.</li>
+                            <li>✅ Inspiration – We lead by example and ignite motivation in others.</li>
+                            <li>✅ Value-Driven Impact – We focus on results that truly matter.</li>
+                            <li>✅ Empowerment – We equip businesses with the tools to scale confidently.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mission-section">
+            <div class="container">
+                <div class="content-card">
+                    <h2>Mission Statement</h2>
+                    <p class="mission-quote">"To provide construction businesses with the leadership, strategy, and systems needed to scale effectively—covering every angle. Through fractional executive services, hands-on consulting, and business optimization, we help owners navigate complexity, eliminate inefficiencies, and build companies that thrive."</p>
+                    
+                    <p>At DAY 41 Thrive, we don't just advise—we execute. We don't just create strategies—we implement them. We make the complicated simple.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <div class="container">
+                <h2>DAY 41 Thrive Core Values – THRIVE</h2>
+                <p class="values-intro">DAY 41 Thrive is built on a foundation that helps businesses THRIVE—not just survive. Our values shape how we lead, strategize, and execute, ensuring that we bring clarity, efficiency, and impact to every business we serve.</p>
+                
+                <div class="values-grid">
+                    {thriveValues.map(value => (
+                        <div class="value-card">
+                            <div class="value-header">
+                                <span class="value-letter">{value.letter}</span>
+                                <h3>
+                                    <span class="value-title">{value.title}</span>
+                                    <span class="value-emoji">{value.emoji}</span>
+                                </h3>
+                                <p class="value-tagline">"{value.tagline}"</p>
+                            </div>
+                            <p class="value-description">{value.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .vision-mission-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 40vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .content-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .vision-quote,
+    .mission-quote {
+        font-size: 1.25rem;
+        color: var(--primary);
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    .thrive-mindset {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: rgba(255, 20, 147, 0.1);
+        border-radius: 0.5rem;
+    }
+
+    .thrive-mindset h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+    }
+
+    .thrive-mindset ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .thrive-mindset li {
+        margin-bottom: 0.75rem;
+        color: var(--text);
+    }
+
+    .values-intro {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        text-align: center;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .values-grid {
+        display: grid;
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .value-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .value-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .value-header {
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .value-letter {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .value-title {
+        font-size: 1.5rem;
+        color: var(--primary);
+        margin-right: 0.5rem;
+    }
+
+    .value-emoji {
+        font-size: 1.5rem;
+    }
+
+    .value-tagline {
+        font-style: italic;
+        color: var(--primary);
+        margin-top: 0.5rem;
+    }
+
+    .value-description {
+        color: var(--text);
+        line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+        .values-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .values-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .content-card {
+            padding: 1.5rem;
+            margin: 0 1rem;
+        }
+
+        .value-card {
+            padding: 1.5rem;
+        }
+    }
+</style>

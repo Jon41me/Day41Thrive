@@ -1,0 +1,176 @@
+Question ID,Section,Question,Answer Options
+"annual-revenue","Curiosity","What's your current annual revenue?","Under $2 million
+$2 million – $5 million
+$5 million – $8 million
+$8 million – $10 million
+Over $10 million"
+"financial-goals","Curiosity","When you think about financial goals, which one best describes your top priority right now?","Increase total revenue
+Grow net profit
+Reduce cost of goods sold (COGS)
+Invest in new equipment or infrastructure
+Boost marketing or sales spending"
+"team-size","Curiosity","How many dedicated sales reps do you have (not including office staff or installers)?","1–4
+5–8
+9–12
+13–16
+17 or more"
+"org-structure","Curiosity","How would you describe your current org structure?","Clear and defined – we've got roles, titles, and accountability
+Functional but informal – we know who does what, more or less
+Pretty loose – everyone just jumps in and gets stuff done
+What is an org structure?"
+"sop-status","Curiosity","Are your Standard Operating Procedures (SOPs) documented and followed?","Yes – we're a well-oiled SOP machine
+Kind of – we have them, but people don't always follow them
+Not really – we rely more on experience than documented processes
+What's an SOP?"
+"biggest-challenge","Curiosity","What's the single biggest challenge you're facing in your business right now?","[Open text response]"
+"lead-sources","Capture","What percentage of your leads come from the following sources?","Google LSA (Local Service Ads)
+Google PPC (Pay-Per-Click)
+SEO (Organic traffic)
+Facebook / Instagram Ads
+Referrals / Repeat Customers
+Door-to-Door / Canvassing
+Lead aggregators (HomeAdvisor, Angi, etc.)
+TV / Radio / Yard signs / Wraps
+Other"
+"lead-response","Capture","How fast do you typically respond to new leads (calls, forms, messages)?","Within 5 minutes
+Within 15 minutes
+Within an hour
+Same day
+It varies a lot"
+"marketing-responsibility","Capture","Who's responsible for marketing in your company?","Full-time internal marketing person/team
+A leader (not owner) handles it part-time
+Outsourced to an agency or freelancer
+Owner wears that hat too
+No one owns it consistently right now"
+"lead-intake","Capture","Do you have a lead intake process that's followed every time?","Yes – it's documented and followed
+Mostly followed
+Somewhat – there's a process, but not always followed
+Not really – it depends who answers the phone or gets the lead"
+"content-creation","Capture","Are you consistently creating and posting video or social media content?","Yes – we post regularly and intentionally
+Sometimes – when we remember or have something cool
+Rarely – it's not a focus
+Never – not doing any content right now"
+"marketing-spend","Capture","What's your average monthly marketing spend?","Under $2,000
+$2,000–$5,000
+$5,000–$10,000
+$10,000–$20,000
+Over $20,000
+Not sure"
+"marketing-improvement","Capture","What is one change to your marketing strategy that would have the greatest impact on your business?","[Open text response]"
+"sales-process","Convert","Do you have a clearly defined sales process—and is it followed?","Yes – it's written out and consistently followed
+We have one, but it's not always used
+Kind of – it's more of a general approach than a real process
+No – every rep does it their own way"
+"sales-kpis","Convert","Do you have set sales KPIs (key performance indicators) that your team is held accountable to?","Yes – we track KPIs weekly and reps are coached on them
+We have KPIs that are tracked, we do not coach on them weekly
+We have targets, but no consistent follow-up or accountability
+We don't have any specific KPIs in place"
+"closing-rate","Convert","What's your current sales closing rate—and how confident are you in that number?","Under 20% – and we track it closely
+20–40% – and we track it closely
+40–60% – and we track it closely
+Over 60% – and we track it closely
+We think under 20%
+We think around 20-40%
+We think around 40-60%
+We think over 60%
+I'm not totally sure – we don't track it consistently"
+"sales-team-size","Convert","How big is your sales team (where the rep is only responsible for Sales)","1 (just the owner or one salesperson)
+2–3 reps
+4–6 reps
+7 or more"
+"sales-leadership","Convert","Do you have a dedicated sales leader, and what role do they play?","Yes – full-time leader/manager, doesn't sell
+Yes – player/coach, manages and still sells
+Kind of – someone oversees the team part-time
+No – the team reports directly to the owner/GM"
+"sales-training","Convert","How would you describe your sales training and onboarding?","We have a structured training program with ongoing coaching
+We do some training, but it's mostly \"learn as you go\"
+New hires shadow someone for a bit, then they're on their own
+We don't really have a training process"
+"sales-improvement","Convert","What is one change to your sales strategy that would have the greatest impact on your business?","[Open text response]"
+"production-structure","Create","What does your current production/operations management structure look like?","We have a full team (GM, Ops Manager, Production Manager, Field Project Managers, and Admin support)
+We have some structure (like Production Manager and Admin), but not all roles are filled
+The sales team helps manage jobs with limited support
+It's handled mainly by the owner or on a job-by-job basis"
+"job-auditing","Create","Is there a process for auditing jobs before materials are ordered, crews are scheduled, or installs are booked with customers?","We have a step-by-step Quality Control (QC) process with specific team roles assigned
+Some checks happen, but it's not consistent
+Sales reps handle most of it themselves
+We don't have a formal auditing process"
+"installation-oversight","Create","Who typically oversees the job on installation day?","A dedicated Field Project Manager or Supervisor
+Sales rep checks in or handles it
+Owner or Production Manager tries to spot-check jobs
+There's no consistent field oversight"
+"production-kpis","Create","Which production KPIs do you track? Select all that apply.","Installed revenue
+Collected revenue
+Material returns
+Job profitability
+Customer satisfaction / 5-star reviews
+We don't currently track production KPIs"
+"conflict-resolution","Create","What's your system for handling job issues or customer conflicts?","We have a clear conflict resolution process that staff are trained on
+We deal with problems case-by-case, depending on who's involved
+It usually goes straight to the owner or sales rep to figure out
+We don't have a consistent process"
+"team-communication","Create","How would you rate your communication among sales, production, and the customer?","Very strong – we have clear handoffs and proactive communication
+Decent – we try to stay aligned, but things fall through sometimes
+Weak – communication gaps happen often
+Nonexistent – it's kind of chaotic"
+"production-improvement","Create","What is one change to your production/operations that would have the greatest impact on your business?","[Open text response]"
+"financial-management","Control","Who handles your financials on a regular basis?","We have both an accountant (CPA) and a dedicated bookkeeper
+We have a CPA and someone in-house who handles bookkeeping
+We only have a CPA or bookkeeper, not both
+The owner does it or oversees it all
+No one really handles it consistently"
+"financial-software","Control","What software are you currently using to manage financials? Select all that apply.","QuickBooks/Sage/other accounting software
+Spreadsheets (Excel, Google Sheets, etc.)
+Our CRM has built-in financial tools
+We're not using anything consistently"
+"crm-software","Control","What CRM or operational software do you use to run your business?","JobNimbus
+AccuLynx
+Roofr
+Leap
+RoofLink
+GiddyUp
+ServiceTitan
+HubSpot
+Salesforce
+Zoho
+We don't use a CRM
+[Other]"
+"phone-system","Control","Do you have a business phone system (not just personal phones)?","Yes – we use a company-wide system with call tracking and recording
+Yes – but it's just a basic VoIP or shared cell phone
+No – everyone uses their own cell phones for work
+We're transitioning but not fully set up yet"
+"financial-review","Control","How often do you review financial performance (P&L, job costing, etc.)?","Weekly – we stay on top of it
+Monthly – we look at reports at least once a month
+Quarterly – we try to check in every few months
+Rarely – only when something feels off
+We don't really review financials regularly"
+"job-profitability","Control","How do you track job-level profitability?","Every job is broken down by revenue, cost, and margin
+We try to track it, but it's not always accurate or timely
+Only big jobs are analyzed for profit
+We don't track profitability at the job level"
+"financial-improvement","Control","What's one area of your financials or back office that you feel needs the most attention or improvement?","[Open text response]"
+"employee-handbook","Culture","Do you currently have an employee handbook or documented company policies?","Yes – we have a complete handbook that's shared with every team member
+We have something written, but it's outdated or not consistently used
+We've talked about creating one, but haven't done it yet
+No handbook or formal documentation"
+"onboarding","Culture","How do you currently onboard and train new team members?","We have a structured onboarding and training process with clear milestones
+New hires shadow others and learn on the job
+We provide some training but it's not very organized
+There's no real onboarding—just jump in and figure it out"
+"coaching-openness","Culture","How open is your team (and leadership) to coaching and change management?","Very open – we actively seek out guidance and feedback
+Somewhat open – depends on the suggestion and timing
+Resistant – we've tried before and it didn't stick
+Not sure – we haven't really been tested on this yet"
+"growth-readiness","Culture","Do you feel your company is ready to evolve and grow to the next level?","100% – we're fired up and ready
+Mostly – we know there are gaps, but we're committed
+Unsure – we want growth but aren't sure how ready we are
+Not quite – too much chaos right now to think about next steps"
+"leadership-style","Culture","How would you describe your leadership style?","Empowering – we trust and develop our team
+Directive – we give clear instructions and expect execution
+Reactive – we solve problems as they come up
+Mixed – depends on the day and the person"
+"team-appreciation","Culture","Do you regularly celebrate wins or show appreciation to your team?","Yes – we have systems in place to recognize and reward performance
+Sometimes – we try to celebrate, but it's not consistent
+Rarely – it's something we've talked about but haven't prioritized
+Not really – we stay focused on the work and results"
+"culture-improvement","Culture","What's one thing you'd love to improve about your company culture or team dynamic?","[Open text response]"

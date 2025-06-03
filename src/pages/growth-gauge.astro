@@ -1,0 +1,416 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FloatingActionButton from '../components/FloatingActionButton.astro';
+
+const benefits = [
+    {
+        icon: "🎯",
+        title: "Uncover Hidden Opportunities",
+        description: "Identify untapped growth potential in your business"
+    },
+    {
+        icon: "📊",
+        title: "Get Actionable Insights",
+        description: "Receive our experience based expertise tailored to your situation"
+    },
+    {
+        icon: "⚡",
+        title: "Quick Implementation",
+        description: "Complete in just 11 minutes and get instant results"
+    },
+    {
+        icon: "🔒",
+        title: "100% Free Assessment",
+        description: "No credit card required, no strings attached"
+    }
+];
+
+const areas = [
+    {
+        letter: "C",
+        title: "Capture",
+        subtitle: "Marketing",
+        description: "Evaluate your lead generation and brand presence"
+    },
+    {
+        letter: "C",
+        title: "Convert",
+        subtitle: "Sales",
+        description: "Analyze your sales process and closing strategies"
+    },
+    {
+        letter: "C",
+        title: "Create",
+        subtitle: "Production",
+        description: "Review your operational efficiency and delivery"
+    },
+    {
+        letter: "C",
+        title: "Control",
+        subtitle: "Admin",
+        description: "Assess your systems, processes, and financial health"
+    },
+    {
+        letter: "+1",
+        title: "Culture",
+        subtitle: "People",
+        description: "Measure team alignment and leadership effectiveness"
+    }
+];
+---
+
+<Layout title="Growth Gauge - Day 41 Thrive">
+    <Header />
+    <main class="growth-gauge-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="animated-title">
+                        <span class="highlight">KNOW BEFORE YOU GROW</span>
+                        <span class="subtitle">FREE Growth Gauge</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Discover exactly where your contracting business stands and what it needs to scale—in just 11 minutes. These next 11 minutes could save you 11 years or more!
+                    </p>
+
+                    <div class="cta-primary">
+                        <a href="/assessment/start" class="btn start-btn">Start Growth Gauge</a>
+                        <p class="no-credit-card">No credit card required • Instant results</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <div class="benefits-grid">
+                    {benefits.map(benefit => (
+                        <div class="benefit-card">
+                            <span class="benefit-icon">{benefit.icon}</span>
+                            <h3>{benefit.title}</h3>
+                            <p>{benefit.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="framework-section">
+            <div class="container">
+                <h2>The 4+1 C's Framework</h2>
+                <p class="framework-intro">Get a comprehensive analysis across these 5 critical areas:</p>
+                
+                <div class="areas-grid">
+                    {areas.map(area => (
+                        <div class="area-card">
+                            <div class="area-header">
+                                <span class="area-letter">{area.letter}</span>
+                                <div class="area-titles">
+                                    <h3>{area.title}</h3>
+                                    <span class="area-subtitle">{area.subtitle}</span>
+                                </div>
+                            </div>
+                            <p>{area.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2>Ready to Scale Your Business?</h2>
+                    <p class="cta-description">
+                        Join the contractors who've used this assessment to identify their growth opportunities and build stronger businesses.
+                    </p>
+                    <div class="cta-features">
+                        <span>✓ 41 Strategic Questions</span>
+                        <span>✓ Experience Based Analysis</span>
+                        <span>✓ Actionable Next Steps</span>
+                    </div>
+                    <a href="/assessment/start" class="btn start-btn">Start Growth Gauge</a>
+                    <p class="time-estimate">⏱️ Takes only 11 minutes to complete</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .growth-gauge-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background: #000000;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        padding: 4rem 0;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .animated-title {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .highlight {
+        color: white;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .hero-description {
+        color: white;
+        font-size: clamp(1.25rem, 2vw, 1.5rem);
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .cta-primary {
+        margin-top: 3rem;
+    }
+
+    .start-btn {
+        font-size: 1.25rem;
+        padding: 1.25rem 3rem;
+        background: var(--primary);
+        color: white;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .start-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(255, 20, 147, 0.4);
+        background: var(--secondary);
+    }
+
+    .no-credit-card {
+        color: white;
+        opacity: 0.8;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .benefits-section {
+        padding: 4rem 0;
+        background: white;
+    }
+
+    .benefits-grid {
+        display: grid;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .benefit-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .benefit-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .benefit-card h3 {
+        color: var(--primary);
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        margin-bottom: 0.5rem;
+    }
+
+    .framework-section {
+        padding: 4rem 0;
+        background: rgba(255, 20, 147, 0.05);
+    }
+
+    .framework-section h2 {
+        text-align: center;
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 1rem;
+    }
+
+    .framework-intro {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+        font-size: 1.1rem;
+    }
+
+    .areas-grid {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .area-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .area-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .area-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .area-letter {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--primary);
+    }
+
+    .area-titles h3 {
+        color: var(--primary);
+        font-size: 1.25rem;
+        margin: 0;
+    }
+
+    .area-subtitle {
+        color: var(--secondary);
+        font-size: 0.9rem;
+    }
+
+    .cta-section {
+        padding: 4rem 0;
+        background: white;
+    }
+
+    .cta-card {
+        background: var(--card-bg);
+        padding: 3rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .cta-card h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 1rem;
+    }
+
+    .cta-description {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .cta-features {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .cta-features span {
+        color: var(--primary);
+        font-weight: 600;
+    }
+
+    .time-estimate {
+        margin-top: 1rem;
+        color: var(--text);
+        opacity: 0.8;
+    }
+
+    @media (min-width: 768px) {
+        .benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .areas-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .benefits-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .hero {
+            padding: 2rem 0;
+        }
+
+        .cta-features {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .start-btn {
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .cta-card {
+            padding: 1.5rem;
+            margin: 0 1rem;
+        }
+    }
+</style>

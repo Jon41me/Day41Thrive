@@ -1,0 +1,389 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import FloatingActionButton from '../../components/FloatingActionButton.astro';
+
+const pinStrategy = [
+    {
+        title: "Facebook & Digital Ads",
+        description: "Run highly targeted local ad campaigns."
+    },
+    {
+        title: "Door Hangers",
+        description: "Direct, physical advertising that puts your brand in homeowners' hands."
+    },
+    {
+        title: "Postcard Drip Campaigns",
+        description: "A sequence of mailers designed to engage and convert."
+    },
+    {
+        title: "Canvassing",
+        description: "Boots-on-the-ground marketing with door-to-door outreach."
+    },
+    {
+        title: "Yard Signs",
+        description: "Visibility on every street where your team works."
+    },
+    {
+        title: "Truck Wraps",
+        description: "Turn your fleet into rolling billboards."
+    }
+];
+
+const touchPacks = [
+    {
+        title: "6 Touches",
+        description: "Knock on 6 doors and hang door hangers with every scheduled appointment."
+    },
+    {
+        title: "12 Touches",
+        description: "Knock on 6+12 doors, hang door hangers, and send targeted \"Be Here Soon\" direct mail."
+    },
+    {
+        title: "24 Touches",
+        description: "Knock on 6+12+24 doors, hang door hangers, and send targeted \"Pardon Our Dust\" direct mail."
+    }
+];
+
+const benefits = [
+    {
+        title: "Custom Marketing Plans",
+        description: "Tailored to your location and service area."
+    },
+    {
+        title: "Data-Driven Strategies",
+        description: "Optimize conversions and ROI."
+    },
+    {
+        title: "Comprehensive Implementation",
+        description: "Ensure every marketing channel is working in sync."
+    },
+    {
+        title: "Scalable Solutions",
+        description: "Grow as your business expands into new neighborhoods."
+    }
+];
+---
+
+<Layout title="The Profit Multiplier Formula - Day 41 Thrive">
+    <Header />
+    <main class="program-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">The Profit Multiplier Formula</h1>
+                <p class="hero-description">Turning One Job Into Many: The Power of Omni-Local Marketing</p>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-card">
+                    <h2>Explore the Strategy</h2>
+                    <p>At DAY 41 THRIVE, we believe in dominating the local market through a multi-channel approach that keeps your brand in front of homeowners at all times. With our Profit Multiplier Formula, we help contractors and home service businesses create a strong presence in their neighborhoods.</p>
+                    
+                    <div class="what-is">
+                        <h3>What is The Profit Multiplier Formula?</h3>
+                        <p>The Profit Multiplier Formula is a hyper-focused, multi-touch marketing strategy that blends digital and physical advertising methods to create unmatched brand awareness within a targeted neighborhood, turning one job into many profitable opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="strategy-section">
+            <div class="container">
+                <h2>The 1 Mile Pin Strategy</h2>
+                <p class="section-intro">With the 1 Mile Pin Strategy, we help businesses dominate the areas where they work. This approach ensures that every home within a 1-mile radius of your active job site is exposed to your brand multiple times.</p>
+                
+                <div class="strategy-grid">
+                    {pinStrategy.map(strategy => (
+                        <div class="strategy-card">
+                            <h3>{strategy.title}</h3>
+                            <p>{strategy.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="packs-section">
+            <div class="container">
+                <h2>The 6/12/24 Pack: Consistency Wins</h2>
+                <p class="section-intro">Marketing success is built on frequency and consistency. Our 6/12/24 Pack ensures repeat exposure at key intervals to keep your business top of mind.</p>
+                
+                <div class="packs-grid">
+                    {touchPacks.map(pack => (
+                        <div class="pack-card">
+                            <h3>{pack.title}</h3>
+                            <p>{pack.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <h2>Why Choose DAY 41 THRIVE for The Profit Multiplier Formula?</h2>
+                <div class="benefits-grid">
+                    {benefits.map(benefit => (
+                        <div class="benefit-card">
+                            <h3>{benefit.title}</h3>
+                            <p>{benefit.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <div class="container">
+                <div class="pricing-card">
+                    <h2>Profit Multiplier Formula – 120-Day Sprint to Explosive Growth</h2>
+                    <p class="pricing-intro">Unlock the power of Omni-Local Marketing with our 120-day Profit Multiplier Formula—a focused sprint designed to train your team on how to implement and execute a strategy that drives real, measurable results.</p>
+                    
+                    <div class="pricing-details">
+                        <p>We don't just teach you the strategy—we hand you the playbook and train your team on exactly how to deploy it. From postcard campaigns and door hangers to high-converting Facebook ads and engaging videos, we provide hands-on guidance in crafting winning assets and designs.</p>
+                        
+                        <p>Plus, we'll help train your team on our proven 6, 12, and 24-pack canvassing system, ensuring they have the tools and confidence to dominate your local market.</p>
+                        
+                        <div class="investment-details">
+                            <div class="investment-item">
+                                <span class="icon">🚀</span>
+                                <p><strong>Investment:</strong> $20,705 ($4,141 down then a 4-month program, $4,141/month)</p>
+                            </div>
+                            <div class="investment-item">
+                                <span class="icon">🔥</span>
+                                <p><strong>Results:</strong> A fully trained team + a scalable marketing machine</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Multiply Your Profits?</h2>
+                <p>Let's build a lead generation strategy that doesn't just bring in customers but also maximizes every sales opportunity.</p>
+                <a href="mailto:hello@day41thrive.com" class="btn">Get Started Today</a>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .program-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .intro-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .what-is {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: rgba(255, 20, 147, 0.1);
+        border-radius: 0.5rem;
+    }
+
+    h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    h3 {
+        color: var(--primary);
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .strategy-grid,
+    .packs-grid,
+    .benefits-grid {
+        display: grid;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .strategy-card,
+    .pack-card,
+    .benefit-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .strategy-card:hover,
+    .pack-card:hover,
+    .benefit-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .pricing-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .pricing-intro {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin: 1.5rem 0;
+    }
+
+    .pricing-details {
+        margin-top: 2rem;
+    }
+
+    .pricing-details p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .investment-details {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: rgba(255, 20, 147, 0.1);
+        border-radius: 0.5rem;
+    }
+
+    .investment-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .investment-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .icon {
+        font-size: 1.5rem;
+    }
+
+    .cta-section {
+        text-align: center;
+        background: rgba(255, 20, 147, 0.05);
+    }
+
+    .cta-section p {
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (min-width: 768px) {
+        .strategy-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .packs-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .benefits-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .intro-card,
+        .pricing-card {
+            padding: 1.5rem;
+            margin: 0 1rem;
+        }
+
+        .strategy-grid,
+        .packs-grid,
+        .benefits-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .investment-item {
+            flex-direction: column;
+            text-align: center;
+            gap: 0.5rem;
+        }
+    }
+</style>

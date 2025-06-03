@@ -1,0 +1,168 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import FloatingActionButton from '../../components/FloatingActionButton.astro';
+import BlogContactCTA from '../../components/BlogContactCTA.astro';
+
+const blogPost = {
+    title: "Why We Started Day 41 Thrive: A Journey from Survival to Leadership Excellence",
+    date: "January 1, 2025",
+    author: "Jonathon Broce"
+};
+---
+
+<Layout title={`${blogPost.title} - Day 41 Thrive`}>
+    <Header />
+    <main class="blog-post">
+        <article class="container">
+            <header class="post-header">
+                <h1>{blogPost.title}</h1>
+                <div class="post-meta">
+                    <span class="date">{blogPost.date}</span>
+                    <span class="author">By {blogPost.author}</span>
+                </div>
+            </header>
+            <div class="post-content">
+                <h2>Introduction</h2>
+                <p>Have you ever found yourself in the middle of a storm, questioning whether you've got what it takes to keep going? As entrepreneurs and leaders, we've all been there—those moments when the challenges seem insurmountable, the pressure feels endless, and the path forward is anything but clear.</p>
+                
+                <p>That's where Day 41 Thrive comes in. Born from real-life experiences, hard lessons, and a passion for helping others, this platform is designed to guide leaders through the storm and into a space where they don't just survive—they thrive.</p>
+
+                <h2>The Storm That Sparked the Idea</h2>
+                <p>Every great idea starts with a story, and Day 41 Thrive is no exception. For me, the inspiration came during one of the most challenging seasons of my life. I was juggling the demands of leading a growing team, managing financial pressures, and trying to stay sane in the process.</p>
+                
+                <p>I'll be honest—there were days when I questioned everything. Was I cut out for this? Could I make the hard decisions? Was I inspiring the people around me, or just barely holding things together?</p>
+                
+                <p>But something incredible happened on what I now call "Day 41." The storm didn't magically disappear, but I realized I didn't need it to. I had learned to navigate through it. I'd built resilience, found clarity, and discovered that the lessons from the storm were the foundation for my growth as a leader.</p>
+
+                <h2>Why Leadership Coaching Matters</h2>
+                <p>So, why focus on leadership coaching and mentoring? Because leadership is a skill, and like any skill, it requires practice, guidance, and sometimes, a reality check.</p>
+                
+                <h3>Here's why coaching can make all the difference:</h3>
+                <ol>
+                    <li>
+                        <strong>Perspective:</strong><br>
+                        As a leader, it's easy to get stuck in the weeds. Coaching provides an outside perspective, helping you see opportunities where you might only see obstacles.
+                    </li>
+                    <li>
+                        <strong>Accountability:</strong><br>
+                        Let's be real—everyone needs accountability. Whether it's setting clear goals or following through on commitments, coaching ensures you stay on track.
+                    </li>
+                    <li>
+                        <strong>Skill Development:</strong><br>
+                        Leadership isn't just about making decisions; it's about communication, emotional intelligence, and the ability to inspire others. A mentor can help you refine these skills and apply them effectively.
+                    </li>
+                    <li>
+                        <strong>Growth Mindset:</strong><br>
+                        One of the biggest shifts you'll experience with coaching is a mindset change. Instead of fearing failure, you'll start to see it as a stepping stone to success.
+                    </li>
+                </ol>
+
+                <h2>The Values Behind Day 41 Thrive</h2>
+                <p>When we launched Day 41 Thrive, we knew it needed to be more than just another coaching program. It had to be personal, impactful, and grounded in real-world experience.</p>
+                
+                <h3>Here are the core values that guide everything we do:</h3>
+                <ol>
+                    <li>
+                        <strong>Resilience:</strong><br>
+                        We teach leaders how to embrace challenges, not avoid them. Because every storm brings an opportunity to grow stronger.
+                    </li>
+                    <li>
+                        <strong>Authenticity:</strong><br>
+                        Leadership isn't about pretending to have all the answers. It's about being real, honest, and willing to learn alongside your team.
+                    </li>
+                    <li>
+                        <strong>Actionable Insights:</strong><br>
+                        No fluff, no jargon—just practical strategies you can apply immediately to your business and leadership style.
+                    </li>
+                    <li>
+                        <strong>Community:</strong><br>
+                        Leadership can feel lonely, but it doesn't have to be. Day 41 Thrive is a community of like-minded entrepreneurs and leaders who support each other through every challenge.
+                    </li>
+                </ol>
+
+                <h2>Day 41 Stories</h2>
+                <p>One of the defining moments for me happened early in my leadership career. I had just stepped into a management role and was determined to prove I could handle it. Then the storm hit—budget cuts, team turnover, and a client who seemed to specialize in making my life difficult.</p>
+                
+                <p>One day, after yet another meeting where I felt like I'd been thrown into a blender, I called a mentor. I vented, expecting some profound advice. Instead, he laughed and said, "Congratulations. You're in the middle of the storm, but that's where leaders are made."</p>
+                
+                <p>He was right. That storm forced me to grow in ways I never imagined. It taught me how to adapt, how to lead with empathy, and how to find solutions even when the odds weren't in my favor. That experience is why I'm so passionate about helping other leaders navigate their own storms.</p>
+
+                <h2>Conclusion</h2>
+                <p>Day 41 Thrive wasn't created to offer quick fixes or empty promises. It was built to provide real, actionable support for entrepreneurs and leaders who want to grow. It's a reminder that the storm you're in today is shaping you for the success you'll achieve tomorrow.</p>
+                
+                <p>If you're ready to move from surviving to thriving, let Day 41 Thrive be the guide that helps you get there.</p>
+                
+                <BlogContactCTA />
+            </div>
+        </article>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .blog-post {
+        padding-top: 80px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    .post-header {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    h1 {
+        color: var(--primary);
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .post-meta {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        color: var(--text);
+        opacity: 0.8;
+    }
+
+    .post-content {
+        color: var(--text);
+        line-height: 1.8;
+    }
+
+    .post-content h2 {
+        color: var(--primary);
+        margin: 2rem 0 1rem;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .post-content h3 {
+        color: var(--primary);
+        margin: 1.5rem 0 1rem;
+        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    }
+
+    .post-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .post-content ul,
+    .post-content ol {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .post-content li {
+        margin-bottom: 1rem;
+    }
+
+    .post-content strong {
+        color: var(--primary);
+    }
+</style>

@@ -1,0 +1,390 @@
+/* Breakpoint Variables */
+:root {
+    /* Screen Sizes */
+    --mobile-sm: 320px;
+    --mobile: 480px;
+    --tablet: 768px;
+    --laptop: 1024px;
+    --desktop: 1200px;
+    --desktop-lg: 1440px;
+
+    /* Container Widths */
+    --container-sm: 100%;
+    --container-md: 720px;
+    --container-lg: 960px;
+    --container-xl: 1140px;
+    --container-xxl: 1320px;
+
+    /* Dynamic Spacing */
+    --section-padding: clamp(3rem, 8vh, 6rem);
+    --container-padding: clamp(1rem, 3vw, 2rem);
+    --card-padding: clamp(1.5rem, 2vw, 2.5rem);
+    --grid-gap: clamp(1.5rem, 2vw, 2.5rem);
+
+    /* Typography Scale */
+    --font-size-xs: clamp(0.75rem, 1vw, 0.875rem);
+    --font-size-sm: clamp(0.875rem, 1.2vw, 1rem);
+    --font-size-base: clamp(1rem, 1.5vw, 1.125rem);
+    --font-size-lg: clamp(1.125rem, 2vw, 1.25rem);
+    --font-size-xl: clamp(1.25rem, 2.5vw, 1.5rem);
+    --font-size-2xl: clamp(1.5rem, 3vw, 2rem);
+    --font-size-3xl: clamp(2rem, 4vw, 3rem);
+    --font-size-4xl: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* Mobile First Base Styles */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Small Mobile (320px+) */
+@media (min-width: 320px) {
+    .container { max-width: var(--container-sm); }
+    
+    /* Grid Layouts */
+    .blog-grid,
+    .pricing-grid,
+    .services-grid,
+    .framework-grid,
+    .founders-grid,
+    .benefits-grid,
+    .features-grid,
+    .packages-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    /* Content Spacing */
+    .section {
+        padding: calc(var(--section-padding) * 0.75) 0;
+    }
+
+    /* Typography */
+    h1 { font-size: var(--font-size-2xl); }
+    h2 { font-size: var(--font-size-xl); }
+    h3 { font-size: var(--font-size-lg); }
+
+    /* Navigation */
+    .mobile-nav {
+        display: block;
+    }
+    .desktop-nav {
+        display: none;
+    }
+
+    /* Hero Sections */
+    .hero,
+    .blog-hero,
+    .swag-hero,
+    .plans-hero {
+        min-height: 60vh;
+        padding: 4rem 0;
+    }
+    
+    /* Cards and Content */
+    .founder-card,
+    .service-card,
+    .framework-card,
+    .benefit-card,
+    .package-card,
+    .blog-card {
+        padding: 1.25rem;
+    }
+    
+    /* Contact Form */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    /* CTA Sections */
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    /* Footer */
+    .footer-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    /* About Section */
+    .about-content {
+        padding: 0 0.75rem;
+    }
+    
+    /* Pricing Cards */
+    .pricing-details {
+        flex-direction: column;
+    }
+}
+
+/* Mobile (480px+) */
+@media (min-width: 480px) {
+    .container { max-width: 450px; }
+
+    /* Grid Layouts */
+    .blog-grid,
+    .pricing-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* Content Cards */
+    .card,
+    .blog-card,
+    .service-card,
+    .founder-card,
+    .framework-card,
+    .benefit-card {
+        padding: calc(var(--card-padding) * 1.25);
+    }
+    
+    /* CTA Sections */
+    .cta-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+    .container { max-width: var(--container-md); }
+
+    /* Navigation */
+    .mobile-nav {
+        display: none;
+    }
+    .desktop-nav {
+        display: block;
+    }
+
+    /* Grid Layouts */
+    .services-grid,
+    .framework-grid,
+    .founders-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .benefits-grid,
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Hero Sections */
+    .hero,
+    .blog-hero,
+    .swag-hero,
+    .plans-hero {
+        min-height: 70vh;
+    }
+
+    /* Typography */
+    h1 { font-size: var(--font-size-3xl); }
+    h2 { font-size: var(--font-size-2xl); }
+    h3 { font-size: var(--font-size-xl); }
+    
+    /* Contact Form */
+    .form-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Footer */
+    .footer-nav {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    /* About Section */
+    .about-content {
+        padding: 0 1rem;
+    }
+    
+    /* Pricing Cards */
+    .pricing-details {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* Laptop (1024px+) */
+@media (min-width: 1024px) {
+    .container { max-width: var(--container-lg); }
+
+    /* Grid Layouts */
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .services-grid,
+    .framework-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .benefits-grid,
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .packages-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .founders-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Content Width */
+    .content-wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Hover Effects */
+    .card:hover,
+    .blog-card:hover,
+    .service-card:hover,
+    .founder-card:hover,
+    .framework-card:hover,
+    .benefit-card:hover {
+        transform: translateY(-4px);
+        transition: transform 0.3s ease;
+    }
+    
+    /* About Section */
+    .about-content {
+        max-width: 1000px;
+        padding: 0 1.5rem;
+    }
+}
+
+/* Desktop (1200px+) */
+@media (min-width: 1200px) {
+    .container { max-width: var(--container-xl); }
+
+    /* Grid Layouts */
+    .pricing-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
+    /* Hero Sections */
+    .hero,
+    .blog-hero,
+    .swag-hero,
+    .plans-hero {
+        min-height: 80vh;
+    }
+    
+    /* Content Cards */
+    .founder-card,
+    .service-card,
+    .framework-card,
+    .benefit-card {
+        padding: 2.5rem;
+    }
+}
+
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+    .container { max-width: var(--container-xxl); }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .card:hover,
+    .blog-card:hover,
+    .service-card:hover,
+    .founder-card:hover,
+    .framework-card:hover,
+    .benefit-card:hover,
+    .btn:hover {
+        transform: none;
+    }
+    
+    .animated-title:hover {
+        transform: none;
+        animation: none;
+    }
+    
+    .animated-title:hover::after {
+        transform: none;
+    }
+}
+
+/* High Resolution Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero,
+    .blog-hero,
+    .swag-hero,
+    .plans-hero {
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+    }
+}
+
+/* Landscape Mode */
+@media (orientation: landscape) and (max-height: 600px) {
+    .hero,
+    .blog-hero,
+    .swag-hero,
+    .plans-hero {
+        min-height: 100vh;
+    }
+    
+    .mobile-nav-content {
+        padding: 1rem 0;
+    }
+    
+    .mobile-nav-content .nav-item {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .header,
+    .footer,
+    .floating-action-button {
+        display: none;
+    }
+
+    .container {
+        max-width: none;
+        padding: 0;
+    }
+
+    .hero,
+    .blog-hero,
+    .swag-hero,
+    .plans-hero {
+        min-height: auto;
+        background: none;
+    }
+    
+    .animated-title,
+    h1, h2, h3, h4, h5, h6 {
+        color: #000 !important;
+    }
+    
+    p, li, blockquote {
+        color: #333 !important;
+    }
+    
+    a {
+        color: #000 !important;
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FloatingActionButton from '../components/FloatingActionButton.astro';
+
+// Redirect to the new URL
+---
+
+<Layout title="Redirecting...">
+    <script>
+        window.location.href = "/programs/winning-sales-compass";
+    </script>
+    <div class="redirect-message">
+        <p>Redirecting to Winning Sales Compass program...</p>
+        <p>If you are not redirected automatically, <a href="/programs/winning-sales-compass">click here</a>.</p>
+    </div>
+</Layout>
+
+<style>
+    .redirect-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    p {
+        margin-bottom: 1rem;
+    }
+    
+    a {
+        color: var(--primary);
+        text-decoration: underline;
+    }
+</style>
