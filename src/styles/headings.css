@@ -1,0 +1,19 @@
+/* Shared heading styles */
+.section h2,
+.section h3 {
+  text-align: center;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+/* Specific heading adjustments */
+#about-title,
+#services-title,
+#framework-title,
+#book-title,
+#contact-title,
+#rates-title {
+  text-align: center;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+}

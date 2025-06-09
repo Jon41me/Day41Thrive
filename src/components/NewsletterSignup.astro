@@ -1,0 +1,81 @@
+---
+const emailSubject = encodeURIComponent("Newsletter Subscription Request");
+const emailBody = encodeURIComponent(`Hello Day 41 Thrive team,
+
+I would like to subscribe to your newsletter to receive leadership insights, event updates, and exclusive content.
+
+Looking forward to thriving together!
+
+Best regards`);
+
+const mailtoLink = `mailto:hello@day41thrive.com?subject=${emailSubject}&body=${emailBody}`;
+---
+<div class="newsletter-card">
+    <h3>Stay Updated with Day 41 Thrive</h3>
+    <p>Subscribe to receive leadership insights, event updates, and exclusive content.</p>
+    <div class="newsletter-cta">
+        <a href={mailtoLink} class="btn subscribe-btn">
+            <span class="icon">📧</span>
+            <span>Subscribe to Newsletter</span>
+        </a>
+    </div>
+</div>
+
+<style>
+    .newsletter-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .newsletter-card:hover {
+        transform: translateY(-4px);
+    }
+
+    h3 {
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .newsletter-cta {
+        display: flex;
+        justify-content: center;
+    }
+
+    .subscribe-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .icon {
+        font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+        .newsletter-card {
+            margin: 0 1rem 2rem;
+            padding: 1.5rem;
+        }
+
+        .subscribe-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>

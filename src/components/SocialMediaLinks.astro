@@ -1,0 +1,95 @@
+---
+const socialLinks = [
+    {
+        name: 'YouTube',
+        url: 'https://www.youtube.com/@Day41Thrive',
+        icon: '📺'
+    },
+    {
+        name: 'Facebook',
+        url: 'https://www.facebook.com/day41thrive',
+        icon: '👥'
+    },
+    {
+        name: 'Instagram',
+        url: 'https://www.instagram.com/day_41_thrive/',
+        icon: '📸'
+    }
+];
+---
+<div class="social-links">
+    <h4>Connect With Us</h4>
+    <div class="social-icons">
+        {socialLinks.map(link => (
+            <a 
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label={`Follow us on ${link.name}`}
+            >
+                <span class="icon">{link.icon}</span>
+                <span class="name">{link.name}</span>
+            </a>
+        ))}
+    </div>
+</div>
+
+<style>
+    .social-links {
+        margin: 1.5rem 0;
+        padding: 1.5rem 0;
+        border-top: 1px solid rgba(255, 20, 147, 0.2);
+    }
+
+    h4 {
+        color: white;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+        background: rgba(255, 20, 147, 0.1);
+    }
+
+    .social-link:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 20, 147, 0.2);
+        color: var(--primary);
+    }
+
+    .icon {
+        font-size: 1.2rem;
+    }
+
+    .name {
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+        .social-icons {
+            gap: 1rem;
+        }
+
+        .social-link {
+            padding: 0.4rem 0.8rem;
+        }
+    }
+</style>

@@ -1,0 +1,103 @@
+---
+interface Props {
+    href: string;
+    text: string;
+    isNav: boolean;
+    className?: string;
+    style?: string;
+    children?: Props[];
+}
+
+const { href, text, isNav, className = '', style = '', children } = Astro.props;
+
+const dataNav = isNav ? href.replace(/^[/#]+/, '') : '';
+const finalHref = isNav ? `/${href}` : href;
+const hasChildren = children && children.length > 0;
+---
+
+<div class={`nav-item-wrapper ${className}`}>
+    <a 
+        href={finalHref}
+        class={`nav-item ${hasChildren ? 'has-dropdown' : ''}`}
+        data-nav={dataNav}
+        style={style}
+    >
+        {text}
+    </a>
+    {hasChildren && (
+        <div class="dropdown-menu">
+            {children.map(child => (
+                <a href={child.href} class="dropdown-item">{child.text}</a>
+            ))}
+        </div>
+    )}
+</div>
+
+<style>
+    .nav-item-wrapper {
+        position: relative;
+    }
+
+    .nav-item {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        display: block;
+    }
+
+    .nav-item:hover {
+        color: var(--primary);
+        transform: translateY(-2px);
+    }
+
+    .has-dropdown::after {
+        content: "▼";
+        font-size: 0.7em;
+        margin-left: 0.5em;
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(0, 0, 0, 0.95);
+        min-width: 200px;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-item-wrapper:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown-item {
+        color: white;
+        text-decoration: none;
+        padding: 0.75rem 1rem;
+        display: block;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        border-radius: 0.25rem;
+    }
+
+    .dropdown-item:hover {
+        background: rgba(255, 20, 147, 0.1);
+        color: var(--primary);
+        transform: translateX(4px);
+    }
+</style>

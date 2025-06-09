@@ -1,0 +1,316 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import FloatingActionButton from '../../components/FloatingActionButton.astro';
+
+const salesSystems = [
+    {
+        title: "Impactful Sales Presentations",
+        description: "Provide clear, customer-centric messaging that simplifies decision-making and enhances the buying experience."
+    },
+    {
+        title: "Proven Scripts and Closing Techniques",
+        description: "Equip your team with the words and strategies to overcome objections and build trust."
+    },
+    {
+        title: "Strategic Sales Process Implementation",
+        description: "Develop a repeatable and scalable process that ensures predictable success."
+    }
+];
+
+const trainingPrograms = [
+    {
+        title: "Sales Fundamentals",
+        description: "Learn the basics of customer psychology, communication, and closing techniques."
+    },
+    {
+        title: "Advanced Sales Strategies",
+        description: "Teach your team how to upsell, cross-sell, and handle complex sales scenarios."
+    },
+    {
+        title: "Team Confidence Building",
+        description: "Boost morale and encourage collaboration through training sessions that inspire and educate."
+    },
+    {
+        title: "Customized for Your Business",
+        description: "Every business is unique, so we tailor our training to address your specific challenges and goals."
+    }
+];
+
+const benefits = [
+    {
+        title: "Increased Close Rates",
+        description: "Boost your revenue with proven closing techniques."
+    },
+    {
+        title: "Trust Building",
+        description: "Foster long-term customer relationships through authentic sales approaches."
+    },
+    {
+        title: "Streamlined Process",
+        description: "Save time and reduce friction with efficient sales systems."
+    },
+    {
+        title: "Competitive Edge",
+        description: "Stand out with exclusive tools and techniques."
+    }
+];
+---
+
+<Layout title="Winning Sales Compass - Day 41 Thrive">
+    <Header />
+    <main class="program-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">Winning Sales Compass</h1>
+                <p class="hero-description">Guiding sales teams to consistent wins</p>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-card">
+                    <h2>Explore Our Systems</h2>
+                    <p>At DAY 41 THRIVE, we know that a high-performing sales team is the engine that drives business growth. That is why we have developed exclusive sales systems and training programs to help your team close more deals, increase revenue, and build long-term customer relationships.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="systems-section">
+            <div class="container">
+                <h2>Our Sales Systems</h2>
+                <p class="section-intro">We believe in providing sales teams with tools that work—not just in theory, but in practice. Our sales systems have been developed and refined through years of experience in the contracting and home service industries.</p>
+                
+                <div class="systems-grid">
+                    {salesSystems.map(system => (
+                        <div class="system-card">
+                            <h3>{system.title}</h3>
+                            <p>{system.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="training-section">
+            <div class="container">
+                <h2>Comprehensive Sales Training</h2>
+                <p class="section-intro">Great tools are only as effective as the people using them. That is why we complement our sales systems with comprehensive training programs that empower your team to excel.</p>
+                
+                <div class="training-grid">
+                    {trainingPrograms.map(program => (
+                        <div class="training-card">
+                            <h3>{program.title}</h3>
+                            <p>{program.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <h2>Why Choose Day 41 Thrive?</h2>
+                <p class="section-intro">Our sales systems and training programs are more than just tools and sessions—they are the key to transforming your team into sales champions.</p>
+                
+                <div class="benefits-grid">
+                    {benefits.map(benefit => (
+                        <div class="benefit-card">
+                            <h3>{benefit.title}</h3>
+                            <p>{benefit.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="success-section">
+            <div class="container">
+                <div class="success-card">
+                    <h2>Success Story: A Proven Track Record</h2>
+                    <p>Our sales systems and training programs have helped contracting businesses increase their sales efficiency and close more deals. These tools work—and we are here to share them with you.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Get Started Today</h2>
+                <p>Your sales team is your biggest asset—let us help them reach their full potential.</p>
+                <a href="mailto:hello@day41thrive.com" class="btn">Transform Your Sales Team</a>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .program-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .intro-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .dumb-tax-box {
+        margin-top: 2rem;
+        padding: 2rem;
+        background: rgba(255, 20, 147, 0.1);
+        border-radius: 0.5rem;
+    }
+
+    blockquote {
+        font-style: italic;
+        margin: 1.5rem 0;
+        padding-left: 1rem;
+        border-left: 4px solid var(--primary);
+        color: var(--primary);
+    }
+
+    h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    h3 {
+        color: var(--primary);
+        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .section-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .systems-grid,
+    .training-grid,
+    .benefits-grid {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .system-card,
+    .training-card,
+    .benefit-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .system-card:hover,
+    .training-card:hover,
+    .benefit-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .success-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .cta-section {
+        text-align: center;
+        background: rgba(255, 20, 147, 0.05);
+    }
+
+    .cta-section p {
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .systems-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .training-grid,
+        .benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .training-grid,
+        .benefits-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .intro-card,
+        .success-card,
+        .system-card,
+        .training-card,
+        .benefit-card {
+            padding: 1.5rem;
+        }
+    }
+</style>

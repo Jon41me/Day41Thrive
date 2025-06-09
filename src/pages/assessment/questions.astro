@@ -1,0 +1,622 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import FloatingActionButton from '../../components/FloatingActionButton.astro';
+import Assessment2 from '../../components/Assessment2';
+import { supabase } from '../../lib/supabase';
+
+// Get assessment ID and token from URL parameters
+const assessmentId = Astro.url.searchParams.get('assessmentId');
+const token = Astro.url.searchParams.get('token');
+
+// Fetch questions from Supabase
+const { data: questionsData, error } = await supabase
+  .from('questions')
+  .select('*')
+  .eq('assessment_type', 'kbyg')
+  .eq('is_active', true)
+  .order('question_order', { ascending: true });
+
+if (error) {
+  console.error('Error fetching questions:', error);
+}
+
+// Transform the data into the format expected by the Assessment2 component
+const groupedQuestions = questionsData?.reduce((acc, question) => {
+  const sectionId = question.section_id;
+  
+  if (!acc[sectionId]) {
+    acc[sectionId] = {
+      id: sectionId,
+      emoji: question.section_emoji || getEmojiForSection(sectionId),
+      title: question.section_title || capitalizeFirstLetter(sectionId),
+      subtitle: question.section_subtitle || '',
+      description: question.section_description || '',
+      questions: []
+    };
+  }
+  
+  acc[sectionId].questions.push({
+    id: question.question_key,
+    type: question.type,
+    question: question.question_text,
+    options: question.options,
+    placeholder: question.placeholder,
+    hasOther: question.has_other || false,
+    percentageOptions: question.percentage_options
+  });
+  
+  return acc;
+}, {});
+
+// Helper function to get emoji for each section
+function getEmojiForSection(sectionId) {
+  const emojis = {
+    'curiosity': '🤓',
+    'capture': '📣',
+    'convert': '💼',
+    'create': '🛠️',
+    'control': '🧾',
+    'culture': '🤝'
+  };
+  return emojis[sectionId] || '📋';
+}
+
+// Helper function to capitalize first letter
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// Convert the grouped questions object to an array
+const sections = Object.values(groupedQuestions || {});
+
+// Fallback to hardcoded sections if there's an error or no data
+const fallbackSections = [
+    {
+        id: "curiosity",
+        emoji: "🤓",
+        title: "Curiosity Section",
+        subtitle: "Ted Lasso getting to know you and your business",
+        description: "Let's get a lay of the land before we explore where you want to go.",
+        questions: [
+            {
+                id: "annual-revenue",
+                type: "radio",
+                question: "What's your current annual revenue?",
+                options: [
+                    "Under $2 million",
+                    "$2 million – $5 million", 
+                    "$5 million – $8 million",
+                    "$8 million – $10 million",
+                    "Over $10 million"
+                ]
+            },
+            {
+                id: "financial-goals",
+                type: "radio",
+                question: "When you think about financial goals, which one best describes your top priority right now?",
+                options: [
+                    "Increase total revenue",
+                    "Grow net profit",
+                    "Reduce cost of goods sold (COGS)",
+                    "Invest in new equipment or infrastructure",
+                    "Boost marketing or sales spending"
+                ]
+            },
+            {
+                id: "team-size",
+                type: "radio", 
+                question: "How many dedicated sales reps do you have (not including office staff or installers)?",
+                options: [
+                    "1–4",
+                    "5–8",
+                    "9–12", 
+                    "13–16",
+                    "17 or more"
+                ]
+            },
+            {
+                id: "org-structure",
+                type: "radio",
+                question: "How would you describe your current org structure?",
+                options: [
+                    "Clear and defined – we've got roles, titles, and accountability",
+                    "Functional but informal – we know who does what, more or less",
+                    "Pretty loose – everyone just jumps in and gets stuff done",
+                    "What is an org structure?"
+                ]
+            },
+            {
+                id: "sop-status",
+                type: "radio",
+                question: "Are your Standard Operating Procedures (SOPs) documented and followed?",
+                options: [
+                    "Yes – we're a well-oiled SOP machine",
+                    "Kind of – we have them, but people don't always follow them",
+                    "Not really – we rely more on experience than documented processes",
+                    "What's an SOP?"
+                ]
+            },
+            {
+                id: "biggest-challenge",
+                type: "textarea",
+                question: "What's the single biggest challenge you're facing in your business right now?",
+                placeholder: "Share what's keeping you up at night or slowing you down the most."
+            }
+        ]
+    },
+    {
+        id: "capture",
+        emoji: "📣",
+        title: "Capture",
+        subtitle: "Marketing",
+        description: "How you attract and acquire customers.",
+        questions: [
+            {
+                id: "lead-sources",
+                type: "percentage_grid",
+                question: "What percentage of your leads come from the following sources?",
+                percentageOptions: [
+                    "Google LSA (Local Service Ads)",
+                    "Google PPC (Pay-Per-Click)",
+                    "SEO (Organic traffic)",
+                    "Facebook / Instagram Ads",
+                    "Referrals / Repeat Customers",
+                    "Door-to-Door / Canvassing",
+                    "Lead aggregators (HomeAdvisor, Angi, etc.)",
+                    "TV / Radio / Yard signs / Wraps",
+                    "Other"
+                ]
+            },
+            {
+                id: "lead-response",
+                type: "radio",
+                question: "How fast do you typically respond to new leads (calls, forms, messages)?",
+                options: [
+                    "Within 5 minutes",
+                    "Within 15 minutes",
+                    "Within an hour",
+                    "Same day",
+                    "It varies a lot"
+                ]
+            },
+            {
+                id: "marketing-responsibility",
+                type: "radio",
+                question: "Who's responsible for marketing in your company?",
+                options: [
+                    "Full-time internal marketing person/team",
+                    "A leader (not owner) handles it part-time",
+                    "Outsourced to an agency or freelancer",
+                    "Owner wears that hat too",
+                    "No one owns it consistently right now"
+                ]
+            },
+            {
+                id: "lead-intake",
+                type: "radio",
+                question: "Do you have a lead intake process that's followed every time?",
+                options: [
+                    "Yes – it's documented and followed",
+                    "Mostly followed",
+                    "Somewhat – there's a process, but not always followed",
+                    "Not really – it depends who answers the phone or gets the lead"
+                ]
+            },
+            {
+                id: "content-creation",
+                type: "radio",
+                question: "Are you consistently creating and posting video or social media content?",
+                options: [
+                    "Yes – we post regularly and intentionally",
+                    "Sometimes – when we remember or have something cool",
+                    "Rarely – it's not a focus",
+                    "Never – not doing any content right now"
+                ]
+            },
+            {
+                id: "marketing-spend",
+                type: "radio",
+                question: "What's your average monthly marketing spend?",
+                options: [
+                    "Under $2,000",
+                    "$2,000–$5,000",
+                    "$5,000–$10,000",
+                    "$10,000–$20,000",
+                    "Over $20,000",
+                    "Not sure"
+                ]
+            },
+            {
+                id: "marketing-improvement",
+                type: "textarea",
+                question: "What is one change to your marketing strategy that would have the greatest impact on your business?",
+                placeholder: "Share what would make the biggest difference in your marketing efforts."
+            }
+        ]
+    },
+    {
+        id: "convert",
+        emoji: "💼",
+        title: "Convert",
+        subtitle: "Sales",
+        description: "How you turn leads into paying customers.",
+        questions: [
+            {
+                id: "sales-process",
+                type: "radio",
+                question: "Do you have a clearly defined sales process—and is it followed?",
+                options: [
+                    "Yes – it's written out and consistently followed",
+                    "We have one, but it's not always used",
+                    "Kind of – it's more of a general approach than a real process",
+                    "No – every rep does it their own way"
+                ]
+            },
+            {
+                id: "sales-kpis",
+                type: "radio",
+                question: "Do you have set sales KPIs (key performance indicators) that your team is held accountable to?",
+                options: [
+                    "Yes – we track KPIs weekly and reps are coached on them",
+                    "We have KPIs that are tracked, we do not coach on them weekly",
+                    "We have targets, but no consistent follow-up or accountability",
+                    "We don't have any specific KPIs in place"
+                ]
+            },
+            {
+                id: "closing-rate",
+                type: "radio",
+                question: "What's your current sales closing rate—and how confident are you in that number?",
+                options: [
+                    "Under 20% – and we track it closely",
+                    "20–40% – and we track it closely",
+                    "40–60% – and we track it closely",
+                    "Over 60% – and we track it closely",
+                    "We think under 20%",
+                    "We think around 20-40%",
+                    "We think around 40-60%",
+                    "We think over 60%",
+                    "I'm not totally sure – we don't track it consistently"
+                ]
+            },
+            {
+                id: "sales-team-size",
+                type: "radio",
+                question: "How big is your sales team (where the rep is only responsible for Sales)",
+                options: [
+                    "1 (just the owner or one salesperson)",
+                    "2–3 reps",
+                    "4–6 reps",
+                    "7 or more"
+                ]
+            },
+            {
+                id: "sales-leadership",
+                type: "radio",
+                question: "Do you have a dedicated sales leader, and what role do they play?",
+                options: [
+                    "Yes – full-time leader/manager, doesn't sell",
+                    "Yes – player/coach, manages and still sells",
+                    "Kind of – someone oversees the team part-time",
+                    "No – the team reports directly to the owner/GM"
+                ]
+            },
+            {
+                id: "sales-training",
+                type: "radio",
+                question: "How would you describe your sales training and onboarding?",
+                options: [
+                    "We have a structured training program with ongoing coaching",
+                    "We do some training, but it's mostly \"learn as you go\"",
+                    "New hires shadow someone for a bit, then they're on their own",
+                    "We don't really have a training process"
+                ]
+            },
+            {
+                id: "sales-improvement",
+                type: "textarea",
+                question: "What is one change to your sales strategy that would have the greatest impact on your business?",
+                placeholder: "Share what would make the biggest difference in your sales performance."
+            }
+        ]
+    },
+    {
+        id: "create",
+        emoji: "🛠️",
+        title: "Create",
+        subtitle: "Production & Install",
+        description: "How you fulfill the work and deliver on the promise.",
+        questions: [
+            {
+                id: "production-structure",
+                type: "radio",
+                question: "What does your current production/operations management structure look like?",
+                options: [
+                    "We have a full team (GM, Ops Manager, Production Manager, Field Project Managers, and Admin support)",
+                    "We have some structure (like Production Manager and Admin), but not all roles are filled",
+                    "The sales team helps manage jobs with limited support",
+                    "It's handled mainly by the owner or on a job-by-job basis"
+                ]
+            },
+            {
+                id: "job-auditing",
+                type: "radio",
+                question: "Is there a process for auditing jobs before materials are ordered, crews are scheduled, or installs are booked with customers?",
+                options: [
+                    "We have a step-by-step Quality Control (QC) process with specific team roles assigned",
+                    "Some checks happen, but it's not consistent",
+                    "Sales reps handle most of it themselves",
+                    "We don't have a formal auditing process"
+                ]
+            },
+            {
+                id: "installation-oversight",
+                type: "radio",
+                question: "Who typically oversees the job on installation day?",
+                options: [
+                    "A dedicated Field Project Manager or Supervisor",
+                    "Sales rep checks in or handles it",
+                    "Owner or Production Manager tries to spot-check jobs",
+                    "There's no consistent field oversight"
+                ]
+            },
+            {
+                id: "production-kpis",
+                type: "checkbox",
+                question: "Which production KPIs do you track? Select all that apply.",
+                options: [
+                    "Installed revenue",
+                    "Collected revenue",
+                    "Material returns",
+                    "Job profitability",
+                    "Customer satisfaction / 5-star reviews",
+                    "We don't currently track production KPIs"
+                ]
+            },
+            {
+                id: "conflict-resolution",
+                type: "radio",
+                question: "What's your system for handling job issues or customer conflicts?",
+                options: [
+                    "We have a clear conflict resolution process that staff are trained on",
+                    "We deal with problems case-by-case, depending on who's involved",
+                    "It usually goes straight to the owner or sales rep to figure out",
+                    "We don't have a consistent process"
+                ]
+            },
+            {
+                id: "team-communication",
+                type: "radio",
+                question: "How would you rate your communication among sales, production, and the customer?",
+                options: [
+                    "Very strong – we have clear handoffs and proactive communication",
+                    "Decent – we try to stay aligned, but things fall through sometimes",
+                    "Weak – communication gaps happen often",
+                    "Nonexistent – it's kind of chaotic"
+                ]
+            },
+            {
+                id: "production-improvement",
+                type: "textarea",
+                question: "What is one change to your production/operations that would have the greatest impact on your business?",
+                placeholder: "Share what would make the biggest difference in your production and operations."
+            }
+        ]
+    },
+    {
+        id: "control",
+        emoji: "🧾",
+        title: "Control",
+        subtitle: "Admin & Financials",
+        description: "How you manage the money, metrics, and internal operations.",
+        questions: [
+            {
+                id: "financial-management",
+                type: "radio",
+                question: "Who handles your financials on a regular basis?",
+                options: [
+                    "We have both an accountant (CPA) and a dedicated bookkeeper",
+                    "We have a CPA and someone in-house who handles bookkeeping",
+                    "We only have a CPA or bookkeeper, not both",
+                    "The owner does it or oversees it all",
+                    "No one really handles it consistently"
+                ]
+            },
+            {
+                id: "financial-software",
+                type: "radio",
+                question: "What software are you currently using to manage financials? Select all that apply.",
+                options: [
+                    "QuickBooks/Sage/other accounting software",
+                    "Spreadsheets (Excel, Google Sheets, etc.)",
+                    "Our CRM has built-in financial tools",
+                    "We're not using anything consistently"
+                ]
+            },
+            {
+                id: "crm-software",
+                type: "checkbox",
+                question: "What CRM or operational software do you use to run your business?",
+                options: [
+                    "JobNimbus",
+                    "AccuLynx",
+                    "Roofr",
+                    "Leap",
+                    "RoofLink",
+                    "GiddyUp",
+                    "ServiceTitan",
+                    "HubSpot",
+                    "Salesforce",
+                    "Zoho",
+                    "We don't use a CRM"
+                ],
+                hasOther: true
+            },
+            {
+                id: "phone-system",
+                type: "radio",
+                question: "Do you have a business phone system (not just personal phones)?",
+                options: [
+                    "Yes – we use a company-wide system with call tracking and recording",
+                    "Yes – but it's just a basic VoIP or shared cell phone",
+                    "No – everyone uses their own cell phones for work",
+                    "We're transitioning but not fully set up yet"
+                ]
+            },
+            {
+                id: "financial-review",
+                type: "radio",
+                question: "How often do you review financial performance (P&L, job costing, etc.)?",
+                options: [
+                    "Weekly – we stay on top of it",
+                    "Monthly – we look at reports at least once a month",
+                    "Quarterly – we try to check in every few months",
+                    "Rarely – only when something feels off",
+                    "We don't really review financials regularly"
+                ]
+            },
+            {
+                id: "job-profitability",
+                type: "radio",
+                question: "How do you track job-level profitability?",
+                options: [
+                    "Every job is broken down by revenue, cost, and margin",
+                    "We try to track it, but it's not always accurate or timely",
+                    "Only big jobs are analyzed for profit",
+                    "We don't track profitability at the job level"
+                ]
+            },
+            {
+                id: "financial-improvement",
+                type: "textarea",
+                question: "What's one area of your financials or back office that you feel needs the most attention or improvement?",
+                placeholder: "Could be job costing, invoicing, collections, team systems—whatever's holding things back."
+            }
+        ]
+    },
+    {
+        id: "culture",
+        emoji: "🤝",
+        title: "Culture",
+        subtitle: "People & Leadership",
+        description: "How you lead your team, build your brand from the inside, and prepare for growth.",
+        questions: [
+            {
+                id: "employee-handbook",
+                type: "radio",
+                question: "Do you currently have an employee handbook or documented company policies?",
+                options: [
+                    "Yes – we have a complete handbook that's shared with every team member",
+                    "We have something written, but it's outdated or not consistently used",
+                    "We've talked about creating one, but haven't done it yet",
+                    "No handbook or formal documentation"
+                ]
+            },
+            {
+                id: "onboarding",
+                type: "radio",
+                question: "How do you currently onboard and train new team members?",
+                options: [
+                    "We have a structured onboarding and training process with clear milestones",
+                    "New hires shadow others and learn on the job",
+                    "We provide some training but it's not very organized",
+                    "There's no real onboarding—just jump in and figure it out"
+                ]
+            },
+            {
+                id: "coaching-openness",
+                type: "radio",
+                question: "How open is your team (and leadership) to coaching and change management?",
+                options: [
+                    "Very open – we actively seek out guidance and feedback",
+                    "Somewhat open – depends on the suggestion and timing",
+                    "Resistant – we've tried before and it didn't stick",
+                    "Not sure – we haven't really been tested on this yet"
+                ]
+            },
+            {
+                id: "growth-readiness",
+                type: "radio",
+                question: "Do you feel your company is ready to evolve and grow to the next level?",
+                options: [
+                    "100% – we're fired up and ready",
+                    "Mostly – we know there are gaps, but we're committed",
+                    "Unsure – we want growth but aren't sure how ready we are",
+                    "Not quite – too much chaos right now to think about next steps"
+                ]
+            },
+            {
+                id: "leadership-style",
+                type: "radio",
+                question: "How would you describe your leadership style?",
+                options: [
+                    "Empowering – we trust and develop our team",
+                    "Directive – we give clear instructions and expect execution",
+                    "Reactive – we solve problems as they come up",
+                    "Mixed – depends on the day and the person"
+                ]
+            },
+            {
+                id: "team-appreciation",
+                type: "radio",
+                question: "Do you regularly celebrate wins or show appreciation to your team?",
+                options: [
+                    "Yes – we have systems in place to recognize and reward performance",
+                    "Sometimes – we try to celebrate, but it's not consistent",
+                    "Rarely – it's something we've talked about but haven't prioritized",
+                    "Not really – we stay focused on the work and results"
+                ]
+            },
+            {
+                id: "culture-improvement",
+                type: "textarea",
+                question: "What's one thing you'd love to improve about your company culture or team dynamic?",
+                placeholder: "This could be communication, accountability, team unity, or just feeling less \"in the weeds.\""
+            }
+        ]
+    }
+];
+
+// Use the fetched sections if available, otherwise use the fallback
+const finalSections = sections.length > 0 ? sections : fallbackSections;
+---
+
+<Layout title="Growth Gauge">
+    <Header />
+    <main class="assessment-page">
+        <section class="assessment-section">
+            <div class="container">
+                <Assessment2 client:load sections={finalSections} assessmentId={assessmentId} token={token} />
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .assessment-page {
+        padding-top: 80px;
+    }
+
+    .assessment-section {
+        padding: 4rem 0;
+        background: rgba(255, 20, 147, 0.05);
+        min-height: calc(100vh - 80px);
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+</style>
+
+<script>
+    // Check if we have user data in session storage
+    const userData = sessionStorage.getItem('assessmentUserData');
+    if (!userData) {
+        // If no user data, redirect to start page
+        window.location.href = '/assessment/start';
+    }
+</script>

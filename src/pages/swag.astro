@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FloatingActionButton from '../components/FloatingActionButton.astro';
+
+const SHOP_URL = 'https://day41thrive.shop';
+---
+
+<Layout title="Day 41 Thrive - Swag Store">
+    <Header />
+    <main class="swag-page">
+        <section class="swag-hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">Day 41 Thrive Swag</h1>
+                <p class="hero-description">Your journey of thriving begins here! Whether you're taking on new challenges, celebrating leadership victories, or simply living with purpose, our exclusive swag is here to inspire and empower every step of the way.</p>
+                <div class="hero-cta">
+                    <a href={SHOP_URL} class="btn" target="_blank" rel="noopener noreferrer">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="swag-content">
+            <div class="container">
+                <div class="intro-section">
+                    <h2>Why Day 41 Thrive?</h2>
+                    <p>Day 41 represents more than a moment—it's a mindset. It's the point where effort meets breakthrough, where persistence pays off, and where leaders and dreamers discover their true potential. Our swag is designed to remind you of this journey and help you share the message with the world.</p>
+                </div>
+
+                <div class="features-section">
+                    <h2>What You'll Find Here</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h3>Inspirational Apparel</h3>
+                            <p>Premium T-shirts and hoodies featuring motivational designs that embody the spirit of thriving.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Everyday Essentials</h3>
+                            <p>From mugs that fuel your mornings to tote bags that carry your purpose, our practical swag keeps the Day 41 spirit alive.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Fun Extras</h3>
+                            <p>Stickers, notebooks, and other goodies to spread positivity and keep you inspired throughout your day.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="purpose-section">
+                    <h2>Designed with Purpose</h2>
+                    <p>Each piece in our collection is thoughtfully designed with empowering messages and bold graphics, so you can wear and share your story. Every purchase supports the Day 41 mission to inspire leaders, foster growth, and celebrate the victories—big and small.</p>
+                </div>
+
+                <div class="movement-section">
+                    <h2>Join the Thrive Movement</h2>
+                    <p>Ready to thrive? Gear up and show the world your commitment to growth, grit, and greatness. Check out our latest designs, and don't forget to tag us on social media to share how you're thriving in Day 41 fashion!</p>
+                    <div class="cta-buttons">
+                        <a href={SHOP_URL} class="btn" target="_blank" rel="noopener noreferrer">Browse the Collection</a>
+                    </div>
+                    <p class="tagline">Because thriving isn't just a phase—it's a lifestyle.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .swag-page {
+        padding-top: 80px;
+    }
+
+    .swag-hero {
+        position: relative;
+        background: #000000;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+    }
+
+    .hero-cta {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .swag-content {
+        padding: 4rem 0;
+    }
+
+    .intro-section,
+    .features-section,
+    .purpose-section,
+    .movement-section {
+        max-width: 800px;
+        margin: 0 auto 4rem;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 1.5rem;
+    }
+
+    p {
+        color: var(--text);
+        font-size: clamp(1rem, 1.5vw, 1.1rem);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .features-grid {
+        display: grid;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .feature-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .feature-card h3 {
+        color: var(--primary);
+        font-size: clamp(1.25rem, 2vw, 1.5rem);
+        margin-bottom: 1rem;
+    }
+
+    .cta-buttons {
+        margin: 2rem 0;
+    }
+
+    .tagline {
+        font-style: italic;
+        color: var(--primary);
+        font-weight: 600;
+    }
+
+    @media (min-width: 768px) {
+        .features-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .feature-card {
+            padding: 1.5rem;
+        }
+    }
+</style>

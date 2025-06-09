@@ -1,0 +1,226 @@
+---
+interface Feature {
+    type: 'video' | 'podcast' | 'interview';
+    title: string;
+    host?: string;
+    date: string;
+    description: string;
+    videoId: string;
+}
+
+const features: Feature[] = [
+    {
+        type: 'video',
+        title: "The Truth About Leadership & Culture",
+        host: 'Ascend Digital Agency',
+        date: '2025',
+        description: "Join Jonathon Broce for an insightful discussion on authentic leadership and building a thriving company culture that drives sustainable business growth.",
+        videoId: '4kzAyuBjzGI'
+    },
+    {
+        type: 'video',
+        title: "Jon Broce on The Patrick Carr Show",
+        host: 'Patrick Carr',
+        date: '2024',
+        description: "Join Jon Broce as he shares his journey from farm life to industry leader, discussing servant leadership, faith, and transforming challenges into opportunities.",
+        videoId: 'L8BJ8YFqnso'
+    },
+    {
+        type: 'video',
+        title: 'EPISODE 5 - The Weekend That Could Change Your Life Forever (w/Jeff Valder)',
+        host: 'Man-Up Adventure Camp',
+        date: '2024',
+        description: 'Join Jeff Valder in this transformative episode from Man-Up Adventure Camp as he shares insights about life-changing experiences and personal growth.',
+        videoId: 'sRnT-usmIuw'
+    },
+    {
+        type: 'podcast',
+        title: 'Episode 43 - Life Leaves Us All Clues (w/ Jeff Valder)',
+        host: 'Reggie Brock',
+        date: 'May 31, 2023',
+        description: 'Join host Reggie Brock and Jeff Valder as they explore how life provides us with valuable clues and lessons that shape our journey and leadership.',
+        videoId: 'yruiH6Xnhl4'
+    },
+    {
+        type: 'video',
+        title: "Roofing's Harsh Reality: The Gold Rush is Gone—Will Your Business Make It?",
+        host: "Roofing Success Podcast",
+        date: '2025',
+        description: "Jonathon Broce discusses the changing landscape of the roofing industry and provides strategic insights on how businesses can adapt and thrive in the new reality.",
+        videoId: '4nOpMfKyYOU'
+    },
+    {
+        type: 'video',
+        title: 'Episode 19 - Lead From the Front',
+        host: 'Culture-Neer Podcast',
+        date: '2024',
+        description: 'Jonathon Broce shares powerful insights on frontline leadership and creating a culture of accountability and excellence in your organization.',
+        videoId: 'xH0SMiP0gd0'
+    },
+    {
+        type: 'video',
+        title: 'Coming Soon',
+        date: '2024',
+        description: 'New content coming soon! Stay tuned for more leadership insights and transformative stories.',
+        videoId: 'dQw4w9WgXcQ'
+    }
+];
+---
+<section class="media-features">
+    <div class="container">
+        <h2 class="animated-title">Featured Media</h2>
+        <div class="features-grid">
+            {features.map(feature => (
+                <div class="feature-card">
+                    <div class="video-container">
+                        <iframe
+                            src={`https://www.youtube.com/embed/${feature.videoId}`}
+                            title={feature.title}
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <span class="feature-type">{feature.type}</span>
+                            <span class="date">{feature.date}</span>
+                        </div>
+                        <h3>{feature.title}</h3>
+                        {feature.host && <p class="host">Hosted by {feature.host}</p>}
+                        <p class="description">{feature.description}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .media-features {
+        margin: 4rem 0;
+        padding: 0 1rem;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .animated-title {
+        display: inline-block;
+        position: relative;
+        transition: transform 0.3s ease;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 2rem;
+        color: var(--primary);
+        font-size: clamp(2rem, 3vw, 2.5rem);
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .feature-card {
+        background: var(--card-bg);
+        border-radius: 1rem;
+        border: 1px solid var(--primary);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 20px rgba(255, 20, 147, 0.2);
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        background: #000;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .feature-type {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: var(--primary);
+        color: var(--text);
+        border-radius: 1rem;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+    }
+
+    .date {
+        color: var(--text);
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    h3 {
+        color: var(--primary);
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+    }
+
+    .host {
+        color: var(--secondary);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        color: var(--text);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .features-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1025px) {
+        .features-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+</style>

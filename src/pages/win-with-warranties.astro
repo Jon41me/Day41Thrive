@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FloatingActionButton from '../components/FloatingActionButton.astro';
+
+// Redirect to the new URL
+---
+
+<Layout title="Redirecting...">
+    <script>
+        window.location.href = "/programs/gaf-golden-pledge";
+    </script>
+    <div class="redirect-message">
+        <p>Redirecting to Win with Warranties program...</p>
+        <p>If you are not redirected automatically, <a href="/programs/gaf-golden-pledge">click here</a>.</p>
+    </div>
+</Layout>
+
+<style>
+    .redirect-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    p {
+        margin-bottom: 1rem;
+    }
+    
+    a {
+        color: var(--primary);
+        text-decoration: underline;
+    }
+</style>

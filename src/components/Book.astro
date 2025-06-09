@@ -1,0 +1,93 @@
+---
+---
+<section id="book" class="section" aria-labelledby="book-title">
+    <div class="container">
+        <h2 id="book-title" class="animated-title">The Failure Formula</h2>
+        <div class="book-content">
+            <p><em>The Failure Formula</em> is a bold guide for leaders who want to thrive through every challenge. Built on the T.H.R.I.V.E. framework—<em><strong>Transparency</strong></em>, <em><strong>Humility</strong></em>, <em><strong>Resilience</strong></em>, <em><strong>Inspiration</strong></em>, <em><strong>Value-Driven Impact</strong></em>, and <em><strong>Empowerment</strong></em>—this book equips you with the tools to embrace failure as a catalyst for growth.</p>
+            
+            <blockquote class="subtitle">
+                Discover how to lead with <em><strong class="highlight">Transparency</strong></em>, openly facing challenges to foster trust and connection. Cultivate <em><strong class="highlight">Humility</strong></em>, owning your missteps and turning them into powerful lessons. Develop <em><strong class="highlight">Resilience</strong></em> to weather any storm and emerge stronger. Through relatable stories and actionable insights, you'll find <em><strong class="highlight">Inspiration</strong></em> to reframe setbacks, uncover opportunities, and stay motivated.
+
+                Focus on delivering <em><strong class="highlight">Value-Driven Impact</strong></em> in every decision, ensuring your leadership leaves a lasting legacy. Most importantly, learn to <em><strong class="highlight">Empower</strong></em> yourself and your team to face adversity with confidence, adapt to change, and turn challenges into triumphs.
+            </blockquote>
+
+            <p><strong><em>The Failure Formula</em> is not just a book—it's your map to transforming failure into strength and leading with purpose through life's most defining moments.</strong></p>
+
+            <div class="book-cta">
+                <p>Coming soon! Join our waiting list to be notified when the book launches.</p>
+                <a href="#contact" class="btn">Contact Us to Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .animated-title {
+        display: inline-block;
+        position: relative;
+        transition: transform 0.3s ease;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .animated-title:hover {
+        transform: scale(1.05);
+        color: var(--primary);
+        animation: pulse 1.5s infinite;
+    }
+    .animated-title::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: -2px;
+        height: 2px;
+        background: var(--primary);
+        transform: scaleX(0);
+        transition: all 0.3s ease;
+    }
+    .animated-title:hover::after {
+        left: 25%;
+        right: 25%;
+        transform: scaleX(1);
+    }
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(255, 20, 147, 0.4);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(255, 20, 147, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(255, 20, 147, 0);
+        }
+    }
+    .book-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .subtitle {
+        font-size: 1.25rem;
+        color: var(--text);
+        margin: 2rem 0;
+        padding: 2rem;
+        border-left: 4px solid var(--primary);
+        background: rgba(128, 128, 128, 0.2);
+        line-height: 1.8;
+    }
+    .highlight {
+        color: var(--primary);
+    }
+    .book-cta {
+        margin-top: 3rem;
+        padding: 2rem;
+        background: var(--card-bg);
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+    }
+    p {
+        margin-bottom: 1.5rem;
+    }
+</style>

@@ -1,0 +1,334 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import FloatingActionButton from '../../components/FloatingActionButton.astro';
+
+const inspectionApproach = [
+    {
+        title: "Comprehensive Roof Inspection",
+        items: [
+            "Document problem areas with photos and videos",
+            "Show homeowners the condition of their shingles, flashing, and underlayment"
+        ]
+    },
+    {
+        title: "Attic Inspection",
+        items: [
+            "Identify ventilation, moisture, and insulation issues",
+            "Show how these issues can cause long-term structural damage"
+        ]
+    },
+    {
+        title: "Educate the Homeowner",
+        items: [
+            "Present a side-by-side comparison of repair costs vs. replacement value",
+            "Explain that small repairs are often temporary solutions"
+        ]
+    },
+    {
+        title: "Highlight Long-Term Benefits",
+        items: [
+            "Emphasize warranty coverage with full replacement",
+            "Show the cost savings over time"
+        ]
+    }
+];
+
+const sellingPoints = [
+    {
+        message: "We'll Start with a Repair First",
+        explanation: "This lowers resistance and helps the homeowner feel in control."
+    },
+    {
+        message: "Only 25% of Roofs Qualify for Repairs",
+        explanation: "This frames replacement as a natural and expected outcome."
+    },
+    {
+        message: "A Repair Might Buy You Time, But It Won't Solve the Problem",
+        explanation: "Show them the long-term cost of repeated repairs."
+    },
+    {
+        message: "Your Roof Protects Everything Under It",
+        explanation: "Reinforce the investment mindset by discussing home value."
+    },
+    {
+        message: "A Replacement Comes with Peace of Mind",
+        explanation: "Highlight warranties and the elimination of future problems."
+    }
+];
+
+const benefits = [
+    {
+        title: "Eases Homeowner Anxiety",
+        description: "Customers are more comfortable saying yes to a small repair rather than committing to a major investment immediately."
+    },
+    {
+        title: "Builds Credibility",
+        description: "Offering repairs shows that your company isn't just pushing a sale; it proves that you are honest, knowledgeable, and have the homeowner's best interest in mind."
+    },
+    {
+        title: "Creates a Natural Transition",
+        description: "A full inspection often reveals that a replacement is the more cost-effective and permanent solution."
+    },
+    {
+        title: "Gets Your Foot in the Door",
+        description: "Repairs allow you to establish a relationship with the homeowner and lay the groundwork for a future sale."
+    }
+];
+---
+
+<Layout title="Repair vs. Replace Strategy - Day 41 Thrive">
+    <Header />
+    <main class="program-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">Repair vs. Replace Strategy</h1>
+                <p class="hero-description">Maximize Lead Generation & Convert Repairs into Replacements</p>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-card">
+                    <h2>Explore the Strategy</h2>
+                    <p>At DAY 41 THRIVE, we teach contractors how to use repair services as a strategic entry point while transitioning homeowners toward full roof replacements. Most homeowners prefer to fix rather than replace due to cost concerns and anxiety about large-scale projects. However, only about 25% of roofs are truly repairable, making the transition to replacement the natural next step when handled correctly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="strategy-section">
+            <div class="container">
+                <h2>The Repair-First Mentality: A Strategic Sales Approach</h2>
+                <p class="section-intro">Many contractors struggle to sell replacements upfront, but repairs provide a non-threatening way to build trust and open the conversation. The key is to position the repair as an opportunity for a full roof and attic inspection, allowing you to educate the homeowner on the long-term risks and benefits of a full replacement.</p>
+                
+                <div class="benefits-grid">
+                    {benefits.map(benefit => (
+                        <div class="benefit-card">
+                            <h3>{benefit.title}</h3>
+                            <p>{benefit.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="inspection-section">
+            <div class="container">
+                <h2>The Full Inspection Approach</h2>
+                <p class="section-intro">To successfully transition from repair to replacement, every appointment must include a full roof and attic inspection. The goal is to educate the homeowner and help them understand why a replacement is often the smarter long-term choice.</p>
+                
+                <div class="inspection-grid">
+                    {inspectionApproach.map(approach => (
+                        <div class="inspection-card">
+                            <h3>{approach.title}</h3>
+                            <ul>
+                                {approach.items.map(item => (
+                                    <li>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="messaging-section">
+            <div class="container">
+                <h2>Selling the Replacement: The Right Messaging</h2>
+                <p class="section-intro">Homeowners need logical and emotional reassurance before committing to a full replacement. Your role is to guide them through the decision-making process in a way that feels natural and stress-free.</p>
+                
+                <div class="messaging-grid">
+                    {sellingPoints.map(point => (
+                        <div class="message-card">
+                            <h3>"{point.message}"</h3>
+                            <p>{point.explanation}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Let's build a lead generation strategy that doesn't just bring in customers but also maximizes every sales opportunity.</p>
+                <a href="mailto:hello@day41thrive.com" class="btn">Get Started Today</a>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .program-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .intro-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .section-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .benefits-grid,
+    .inspection-grid,
+    .messaging-grid {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .benefit-card,
+    .inspection-card,
+    .message-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .benefit-card:hover,
+    .inspection-card:hover,
+    .message-card:hover {
+        transform: translateY(-4px);
+    }
+
+    h3 {
+        color: var(--primary);
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    li::before {
+        content: "•";
+        color: var(--primary);
+        position: absolute;
+        left: 0;
+    }
+
+    .cta-section {
+        text-align: center;
+        background: rgba(255, 20, 147, 0.05);
+    }
+
+    .cta-section p {
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .inspection-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .messaging-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .benefits-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .inspection-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .messaging-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .intro-card,
+        .benefit-card,
+        .inspection-card,
+        .message-card {
+            padding: 1.5rem;
+        }
+    }
+</style>

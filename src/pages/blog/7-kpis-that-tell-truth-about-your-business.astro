@@ -1,0 +1,194 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import FloatingActionButton from '../../components/FloatingActionButton.astro';
+import BlogContactCTA from '../../components/BlogContactCTA.astro';
+
+const blogPost = {
+    title: "7 KPIs That Tell You the Truth About Your Business",
+    date: "May 13, 2025",
+    author: "Jonathon Broce"
+};
+---
+
+<Layout title={`${blogPost.title} - Day 41 Thrive`}>
+    <Header />
+    <main class="blog-post">
+        <article class="container">
+            <header class="post-header">
+                <h1>{blogPost.title}</h1>
+                <div class="post-meta">
+                    <span class="date">{blogPost.date}</span>
+                    <span class="author">By {blogPost.author}</span>
+                </div>
+                <p class="subtitle">(Even If You Don't Want to Hear It)</p>
+            </header>
+            <div class="post-content">
+                <h2>Introduction: Feelings Aren't Facts</h2>
+                <p>There's a dangerous trap that far too many entrepreneurs fall into: They feel like things are going great… until they're not.</p>
+                
+                <p>Leads seem steady. Jobs are getting installed. The team's "busy." But somehow, there's never enough cash, the stress keeps building, and growth feels like a grind.</p>
+                
+                <p>At Day 41 Thrive, we believe that the fastest way to level up your business is to get brutally honest about one thing: 📊 Your numbers.</p>
+                
+                <p>Not guesses. Not gut checks. Key Performance Indicators (KPIs).</p>
+                
+                <p>Because data doesn't lie. Let's look at the 7 KPIs that every contractor and small business owner should track—and how they'll change the way you lead.</p>
+
+                <h2>1. Lead-to-Appointment Conversion Rate</h2>
+                <p><strong>What it is:</strong> The percentage of leads that turn into scheduled appointments.</p>
+                <p><strong>Why it matters:</strong> It shows how effective your front-end process is—marketing, phones, website, lead response time, etc.</p>
+                
+                <p>✅ <strong>Healthy Range:</strong> 50%+</p>
+                <p>📌 <strong>If it's low:</strong> You're either generating low-quality leads or you've got a bottleneck in lead follow-up.</p>
+                
+                <p>The truth: You don't have a lead problem—you have a conversion problem.</p>
+
+                <h2>2. Appointment-to-Sale Conversion Rate</h2>
+                <p><strong>What it is:</strong> The percentage of appointments that close into paying customers.</p>
+                <p><strong>Why it matters:</strong> This is the heart of your sales engine.</p>
+                
+                <p>✅ <strong>Healthy Range:</strong> 30–50%+ (retail); 60–80% (referrals or insurance)</p>
+                <p>📌 <strong>If it's low:</strong> Sales training, proposal clarity, or trust-building may need work.</p>
+                
+                <p>The truth: If you're running 20 appointments a week and closing 2, you don't need more leads—you need better sales process.</p>
+
+                <h2>3. Average Job Size (Ticket Value)</h2>
+                <p><strong>What it is:</strong> The average revenue per job sold.</p>
+                <p><strong>Why it matters:</strong> Bigger jobs usually mean higher profit margins and better efficiency.</p>
+                
+                <p>✅ <strong>Healthy Range:</strong> Depends on your niche (Roofing? $12K–$18K is solid.)</p>
+                <p>📌 <strong>If it's low:</strong> You're missing upsell opportunities or underselling your value.</p>
+                
+                <p>The truth: Raising your average job size by $2,000 could add six figures to your bottom line.</p>
+
+                <h2>4. Gross Profit Per Job</h2>
+                <p><strong>What it is:</strong> Total revenue minus direct costs (materials, labor, subs).</p>
+                <p><strong>Why it matters:</strong> It's not about what you make—it's about what you keep.</p>
+                
+                <p>✅ <strong>Healthy Range:</strong> 35–50%</p>
+                <p>📌 <strong>If it's low:</strong> You've got issues with estimating, material waste, or labor efficiency.</p>
+                
+                <p>The truth: Sales are vanity. Gross profit is sanity.</p>
+
+                <h2>5. Net Profit Margin</h2>
+                <p><strong>What it is:</strong> What's left after all expenses—including marketing, payroll, rent, insurance, etc.</p>
+                <p><strong>Why it matters:</strong> This is the number that determines how long you can breathe, invest, and grow.</p>
+                
+                <p>✅ <strong>Healthy Range:</strong> 10–20%</p>
+                <p>📌 <strong>If it's low:</strong> You're either overspending or underpricing—or both.</p>
+                
+                <p>The truth: A $5 million company with 5% net profit is working twice as hard for half as much as a $2.5 million company at 20%.</p>
+
+                <h2>6. Cycle Time (Lead to Completion)</h2>
+                <p><strong>What it is:</strong> How long it takes from sale to project completion.</p>
+                <p><strong>Why it matters:</strong> Shorter cycle time = faster cash flow = higher customer satisfaction.</p>
+                
+                <p>✅ <strong>Healthy Range:</strong> Depends on your industry, but aim for consistency.</p>
+                <p>📌 <strong>If it's high:</strong> Production delays, scheduling issues, or material sourcing need fixing.</p>
+                
+                <p>The truth: Long cycle times kill referrals, frustrate teams, and choke your growth.</p>
+
+                <h2>7. Customer Satisfaction / Review Rate</h2>
+                <p><strong>What it is:</strong> How often you're getting reviews (and what they say).</p>
+                <p><strong>Why it matters:</strong> Social proof builds trust, boosts close rates, and fuels referrals.</p>
+                
+                <p>✅ <strong>Healthy Range:</strong> At least 1 review for every 3 jobs</p>
+                <p>📌 <strong>If it's low:</strong> Your team isn't asking—or worse, your service isn't memorable.</p>
+                
+                <p>The truth: If your customers aren't raving, they're forgetting you.</p>
+
+                <h2>Final Thought: KPIs Don't Micromanage—They Guide</h2>
+                <p>You don't need to check KPIs every five minutes. But if you don't check them at all, you're flying blind.</p>
+                
+                <p>These 7 numbers are your weekly dashboard. They show you:</p>
+                <ul>
+                    <li>Where you're bleeding</li>
+                    <li>Where you're winning</li>
+                    <li>Where you need to lead</li>
+                </ul>
+                
+                <p>At Day 41 Thrive, we teach leaders to lead by the numbers without losing the heart. Because when you can track the right metrics, you can build the right future.</p>
+                
+                <p>And that's how you stop guessing—and start thriving.</p>
+
+                <BlogContactCTA />
+            </div>
+        </article>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .blog-post {
+        padding-top: 80px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    .post-header {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    h1 {
+        color: var(--primary);
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        color: var(--secondary);
+        font-size: clamp(1.1rem, 2vw, 1.3rem);
+        font-style: italic;
+        margin-top: 0.5rem;
+    }
+
+    .post-meta {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        color: var(--text);
+        opacity: 0.8;
+        margin-bottom: 0.5rem;
+    }
+
+    .post-content {
+        color: var(--text);
+        line-height: 1.8;
+    }
+
+    .post-content h2 {
+        color: var(--primary);
+        margin: 2rem 0 1rem;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .post-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .post-content ul {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .post-content li {
+        margin-bottom: 0.75rem;
+    }
+
+    .post-content strong {
+        color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 1.5rem;
+        }
+    }
+</style>

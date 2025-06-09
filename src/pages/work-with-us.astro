@@ -1,0 +1,996 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FloatingActionButton from '../components/FloatingActionButton.astro';
+
+interface ConsultingPackage {
+    name: string;
+    description: string;
+    standardPricing: {
+        price: string;
+        hours: string;
+        contract: string;
+    };
+    profitSharingPricing: {
+        price: string;
+        hours: string;
+        contract: string;
+        profitSharing: string;
+    };
+}
+
+const packages: ConsultingPackage[] = [
+    {
+        name: "Compass",
+        description: "Finding the right path and direction.",
+        standardPricing: {
+            price: "Starting at $7,500/Month",
+            hours: "15 Hours",
+            contract: "1-Year Contract"
+        },
+        profitSharingPricing: {
+            price: "Starting at $5,000/Month",
+            hours: "15 Hours",
+            contract: "2-Year Contract",
+            profitSharing: "Minimum 10% Profit Sharing"
+        }
+    },
+    {
+        name: "Beacon",
+        description: "Illuminating the way forward with confidence.",
+        standardPricing: {
+            price: "Starting at $12,500/Month",
+            hours: "25 Hours",
+            contract: "1-Year Contract"
+        },
+        profitSharingPricing: {
+            price: "Starting at $10,000/Month",
+            hours: "25 Hours",
+            contract: "2-Year Contract",
+            profitSharing: "Minimum 10% Profit Sharing"
+        }
+    },
+    {
+        name: "Horizon",
+        description: "Expanding reach and pushing boundaries.",
+        standardPricing: {
+            price: "Starting at $15,000/Month",
+            hours: "35 Hours",
+            contract: "1-Year Contract"
+        },
+        profitSharingPricing: {
+            price: "Starting at $12,500/Month",
+            hours: "35 Hours",
+            contract: "2-Year Contract",
+            profitSharing: "Minimum 10% Profit Sharing"
+        }
+    },
+    {
+        name: "Flagship",
+        description: "The leading vessel, representing top-tier success.",
+        standardPricing: {
+            price: "Starting at $20,000/Month",
+            hours: "50 Hours",
+            contract: "1-Year Contract"
+        },
+        profitSharingPricing: {
+            price: "Starting at $15,000/Month",
+            hours: "50 Hours",
+            contract: "2-Year Contract",
+            profitSharing: "Minimum 10% Profit Sharing"
+        }
+    }
+];
+
+const frameworks = [
+    {
+        title: "Capture",
+        subtitle: "Marketing",
+        description: "Are you attracting the right leads efficiently?"
+    },
+    {
+        title: "Convert",
+        subtitle: "Sales",
+        description: "Is your sales process turning leads into revenue?"
+    },
+    {
+        title: "Create",
+        subtitle: "Production & Operations",
+        description: "Can your service or product delivery scale effectively?"
+    },
+    {
+        title: "Control",
+        subtitle: "Admin & Financials",
+        description: "Do you have the right systems, finances, and team in place for sustainable growth?"
+    },
+    {
+        title: "Culture",
+        subtitle: "People & Leadership",
+        description: "Is your team aligned, engaged, and driving towards shared goals?"
+    }
+];
+
+const deliverables = [
+    {
+        title: "📌 One-Page Plan (OPP)",
+        items: [
+            "A clear, structured growth roadmap for 30 days, 90 days, 1 year, and 3 years",
+            "Identifies immediate action items and long-term strategic goals"
+        ]
+    },
+    {
+        title: "📌 SOP Manual",
+        items: [
+            "A tailored guide outlining key processes and responsibilities",
+            "Ensures scalability and consistency"
+        ]
+    },
+    {
+        title: "📌 Sales Tracker",
+        items: [
+            "A tool for tracking leads, conversion rates, and revenue performance",
+            "Helps you optimize your sales strategy"
+        ]
+    },
+    {
+        title: "📌 L10 Financial Tracker",
+        items: [
+            "A structured financial health assessment",
+            "Tracks cash flow, profitability, and growth trends"
+        ]
+    },
+    {
+        title: "📌 Marketing Tracker",
+        items: [
+            "Insights into your lead generation effectiveness",
+            "Key metrics to measure ROI and conversion rates"
+        ]
+    },
+    {
+        title: "📌 Culture Audit Reports",
+        items: [
+            "Assessment of team culture and leadership effectiveness",
+            "Actionable strategies for improvement"
+        ]
+    }
+];
+
+const additionalServices = [
+    {
+        title: "FULL CRM System Audit",
+        description: "A comprehensive analysis of your CRM setup, usage, and optimization opportunities",
+        price: "Starting at $3,941",
+        includes: [
+            "Full CRM system review",
+            "Workflow optimization recommendations",
+            "Integration assessment",
+            "User adoption analysis",
+            "Data quality evaluation",
+            "Implementation roadmap"
+        ]
+    }
+];
+
+const otherServices = [
+    "Chief Executive Officer (CEO)",
+    "Chief Operating Officer (COO)",
+    "Chief Marketing Officer (CMO)",
+    "Chief Technology Officer (CTO)",
+    "Chief Financial Officer (CFO)",
+    "Chief Innovation Officer (CIO)",
+    "Call Center Director",
+    "Personal Development Coaching",
+    "Many, Many More"
+];
+
+const benefits = [
+    {
+        title: "Expert Leadership",
+        description: "Gain access to top-tier fractional executive services."
+    },
+    {
+        title: "Scalable Support",
+        description: "Packages designed to fit your current and future business needs."
+    },
+    {
+        title: "Performance-Driven",
+        description: "Options to leverage profit-sharing and equity partnerships."
+    },
+    {
+        title: "Proven Success",
+        description: "Work with experienced business strategists who drive tangible results."
+    }
+];
+---
+
+<Layout title="Work With Us - Day 41 Thrive">
+    <Header />
+    <main class="work-with-us-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">Work With Us</h1>
+                <p class="hero-description">Top Fractional Executive Consulting Services with Industry-Changing Culture and Leadership Training, Where We are Helping Contractors Scale Their Businesses</p>
+                <div class="hero-cta">
+                    <a href="/vision-mission-values" class="btn btn-outline">Our Vision & Values</a>
+                    <a href="/brand-ambassador" class="btn btn-outline">Brand Ambassador</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-section">
+            <div class="container">
+                <div class="why-card">
+                    <h2>Why Work with DAY 41 THRIVE?</h2>
+                    <p>We've been in your shoes—starting, scaling, and selling businesses in the home service industry. We know the challenges, the pitfalls, and the opportunities. With a practical, pragmatic approach, we bring:</p>
+                    
+                    <ul class="why-list">
+                        <li>
+                            <strong>Real-world experience:</strong> Proven success in growing and selling multimillion-dollar companies
+                        </li>
+                        <li>
+                            <strong>Customized solutions:</strong> Every business is different—we tailor strategies to fit your needs
+                        </li>
+                        <li>
+                            <strong>A growth mindset:</strong> There's no such thing as a problem, only an unsolved opportunity
+                        </li>
+                        <li>
+                            <strong>Results-driven coaching:</strong> Our goal is to help you scale sustainably without burning out
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-card">
+                    <h2>Expert Consulting & Strategic Growth Solutions</h2>
+                    <p>At DAY 41 Thrive, we provide top-tier consulting services tailored to drive business growth, efficiency, and long-term success. Our flexible consulting packages ensure that businesses receive expert leadership guidance, operational support, and strategic oversight at the level that fits their needs.</p>
+                    
+                    <div class="dumb-tax-box">
+                        <h3>Don't Pay the Dumb Tax</h3>
+                        <p>We know what NOT to do. Let us help you avoid costly mistakes and wasted time as we scale your business.</p>
+                        <blockquote>"Learn from our experience, not your mistakes. We've already paid the tuition for these lessons—let us share that knowledge with you."</blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="know-grow-section">
+            <div class="container">
+                <div class="know-grow-card">
+                    <h2>Know Before You Grow – A Business Audit</h2>
+                    <p class="tagline">Gain Clarity. Build a Roadmap. Scale with Confidence.</p>
+
+                    <div class="intro-block">
+                        <h3>Before You Grow, You Need to Know</h3>
+                        <p>Scaling a business without a clear roadmap is like setting out on a journey without a destination. Day 41 Thrive presents the Know Before You Grow audit—designed to uncover hidden opportunities, identify bottlenecks, and create a solid foundation before you scale.</p>
+                    </div>
+
+                    <div class="framework-block">
+                        <h3>The 4+1 Corner Audit Framework</h3>
+                        <div class="corners-grid">
+                            {frameworks.map(framework => (
+                                <div class="corner-item">
+                                    <span class="emoji">🔹</span>
+                                    <h4>{framework.title}</h4>
+                                    <p class="subtitle">{framework.subtitle}</p>
+                                    <p>{framework.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div class="process-block">
+                        <h3>How It Works</h3>
+                        
+                        <div class="step-card">
+                            <h4>Step 1: Pre-Audit Discovery & Leadership Interviews</h4>
+                            <p>Before the on-site audit, we'll set up initial discovery calls to understand your business, goals, and challenges. You'll complete a pre-audit assessment that provides baseline data on your company's marketing, sales, production, and financials.</p>
+                            <p>We will then conduct one-on-one interviews with:</p>
+                            <ul>
+                                <li>You (the owner/CEO)</li>
+                                <li>Your top four leaders (Sales, Marketing, Operations, Finance, or others)</li>
+                            </ul>
+                        </div>
+
+                        <div class="step-card">
+                            <h4>Step 2: On-Site Business Audit (1.5 Days of Deep-Dive Analysis)</h4>
+                            <p>We come to your business for 1.5 days of in-person evaluation.</p>
+                            <div class="options">
+                                <p>• Option 1: You travel to us in beautiful Clearwater Florida</p>
+                                <p>• Option 2: We fly to you (you cover travel expenses + $1,441 (starting at $5,582 total + Travel)</p>
+                            </div>
+                            
+                            <h5>What Happens During the On-Site Audit?</h5>
+                            <ul>
+                                <li>CRM Analysis: We evaluate your CRM setup, lead flow, automations, and data tracking.</li>
+                                <li>Sales Process Breakdown: We assess your conversion rates, sales scripts, and pipeline management.</li>
+                                <li>Marketing Strategy Review: We analyze lead sources, ad spend ROI, and brand positioning.</li>
+                                <li>Production & Service Efficiency: We look at workflow bottlenecks, delivery consistency, and customer satisfaction.</li>
+                                <li>Financial Health Check: We examine cash flow, pricing strategies, and operational profitability.</li>
+                                <li>Culture & Team Alignment: We gauge team morale, leadership effectiveness, and employee engagement.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="deliverables-block">
+                        <h3>Deliverables: Your Blueprint for Growth</h3>
+                        <div class="deliverables-grid">
+                            {deliverables.map(deliverable => (
+                                <div class="deliverable-card">
+                                    <h4>{deliverable.title}</h4>
+                                    <ul>
+                                        {deliverable.items.map(item => (
+                                            <li>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div class="ideal-client-block">
+                        <h3>Who Is This For?</h3>
+                        <p>The Know Before You Grow audit is designed for business owners who:</p>
+                        <ul class="checkmark-list">
+                            <li>Feel stuck and want a clear roadmap for scaling their company</li>
+                            <li>Struggle with inconsistent sales, lead flow, or production inefficiencies</li>
+                            <li>Are planning to expand, franchise, or acquire another business</li>
+                            <li>Want to identify blind spots before making their next big move</li>
+                            <li>Need help optimizing financials, team performance, and culture</li>
+                        </ul>
+                    </div>
+
+                    <div class="investment-block">
+                        <h3>Investment: $4,141</h3>
+                        <p>This is not just another business evaluation. This is a data-driven, action-oriented audit that gives you real solutions—not just theory.</p>
+                        <a href="/contact" class="btn">Book Your Audit Today</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="packages-section">
+            <div class="container">
+                <h2>Consulting Packages & Pricing</h2>
+                
+                <div class="pricing-section">
+                    <h3>1. Consulting Only (Strategy & Execution)</h3>
+                    <div class="packages-grid">
+                        {packages.map(pkg => (
+                            <div class="package-card">
+                                <h4>{pkg.name}</h4>
+                                <p class="description">{pkg.description}</p>
+                                <div class="pricing-details">
+                                    <p class="price">{pkg.standardPricing.price}</p>
+                                    <ul>
+                                        <li>{pkg.standardPricing.hours} of consulting</li>
+                                        <li>{pkg.standardPricing.contract}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div class="pricing-section">
+                    <h3>2. Consulting + Profit-Sharing and Performance-Based Partnership</h3>
+                    <div class="packages-grid">
+                        {packages.map(pkg => (
+                            <div class="package-card">
+                                <h4>{pkg.name}</h4>
+                                <p class="description">{pkg.description}</p>
+                                <div class="pricing-details">
+                                    <p class="price">{pkg.profitSharingPricing.price}</p>
+                                    <ul>
+                                        <li>{pkg.profitSharingPricing.hours} of consulting</li>
+                                        <li>{pkg.profitSharingPricing.contract}</li>
+                                        <li>{pkg.profitSharingPricing.profitSharing}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div class="equity-section">
+                    <h3>Equity Partnerships Available</h3>
+                    <p>We offer both Sweat Equity and Purchase Equity options for select partnerships. Contact us to discuss how equity-based collaboration can drive mutual success.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="other-services">
+            <div class="container">
+                <h2>Other Services</h2>
+                <p class="services-intro">In addition to our consulting packages, we provide access to a network of experienced professionals for specialized roles on a fractional basis, including:</p>
+                
+                <div class="services-grid">
+                    {otherServices.map(service => (
+                        <div class="service-card">
+                            <p>{service}</p>
+                        </div>
+                    ))}
+                </div>
+
+                <p class="services-outro">Through our professional partners, we can help you secure top-tier leadership in these critical areas to support your business growth and operations.</p>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <h2>Why Choose DAY 41 THRIVE?</h2>
+                <div class="benefits-grid">
+                    {benefits.map(benefit => (
+                        <div class="benefit-card">
+                            <h3>{benefit.title}</h3>
+                            <p>{benefit.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="audit-services-section">
+            <div class="container">
+                <h2>Additional Audit Services</h2>
+                <div class="audit-services-grid">
+                    {additionalServices.map(service => (
+                        <div class="audit-service-card">
+                            <h3>{service.title}</h3>
+                            <p class="price">{service.price}</p>
+                            <p class="description">{service.description}</p>
+                            <ul>
+                                {service.includes.map(item => (
+                                    <li>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Let's build a strategic partnership for your business growth!</h2>
+                <p>This is a collaborative process—we work with you to accelerate your growth and achieve your goals.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:hello@day41thrive.com" class="btn">Contact Us</a>
+                    <a href="/plans" class="btn btn-secondary">OTHER PLANS</a>
+                    <a href="/partners" class="btn btn-outline">View Our Partners</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .work-with-us-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+    }
+
+    .hero-cta {
+        margin-top: 2rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .intro-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .dumb-tax-box {
+        margin-top: 2rem;
+        padding: 2rem;
+        background: rgba(255, 20, 147, 0.1);
+        border-radius: 0.5rem;
+    }
+
+    blockquote {
+        font-style: italic;
+        margin: 1.5rem 0;
+        padding-left: 1rem;
+        border-left: 4px solid var(--primary);
+        color: var(--primary);
+    }
+
+    h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    h3 {
+        color: var(--primary);
+        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .packages-grid {
+        display: grid;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .package-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .package-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .package-card h4 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .price {
+        font-size: 1.75rem;
+        color: var(--primary);
+        font-weight: bold;
+        margin: 1rem 0;
+    }
+
+    .pricing-details ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .pricing-details li {
+        margin-bottom: 0.5rem;
+        color: var(--text);
+    }
+
+    .equity-section {
+        text-align: center;
+        margin-top: 3rem;
+        padding: 2rem;
+        background: var(--card-bg);
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+    }
+
+    .services-grid {
+        display: grid;
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .service-card {
+        background: var(--card-bg);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .benefits-grid {
+        display: grid;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .benefit-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .cta-section {
+        text-align: center;
+        background: var(--card-bg);
+        padding: 4rem 0;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    .btn-outline {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+    }
+
+    .btn-outline:hover {
+        background: var(--primary);
+        color: white;
+    }
+
+    .why-section {
+        padding: 4rem 0;
+        background: rgba(255, 20, 147, 0.05);
+    }
+
+    .why-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 800px;
+        margin: 0 auto;
+        transition: transform 0.3s ease;
+    }
+
+    .why-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .why-card h2 {
+        text-align: left;
+        margin-bottom: 1.5rem;
+    }
+
+    .why-card p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        color: var(--text);
+    }
+
+    .why-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .why-list li {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+        position: relative;
+        color: var(--text);
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .why-list li::before {
+        content: "•";
+        color: var(--primary);
+        position: absolute;
+        left: 0;
+    }
+
+    .why-list strong {
+        color: var(--primary);
+    }
+
+    .know-grow-section {
+        padding: 4rem 0;
+        background: rgba(255, 20, 147, 0.05);
+    }
+
+    .know-grow-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .tagline {
+        text-align: center;
+        color: var(--primary);
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        font-style: italic;
+    }
+
+    .intro-block,
+    .framework-block,
+    .process-block,
+    .deliverables-block,
+    .ideal-client-block,
+    .investment-block {
+        margin-bottom: 3rem;
+    }
+
+    .corners-grid {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .corner-item {
+        background: rgba(255, 20, 147, 0.1);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    .corner-item:hover {
+        transform: translateY(-4px);
+    }
+
+    .emoji {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    .step-card {
+        background: rgba(255, 20, 147, 0.1);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .options {
+        margin: 1rem 0;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+    }
+
+    .deliverables-grid {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .deliverable-card {
+        background: rgba(255, 20, 147, 0.1);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    .deliverable-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .checkmark-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .checkmark-list li {
+        margin-bottom: 0.75rem;
+        padding-left: 2rem;
+        position: relative;
+    }
+
+    .checkmark-list li::before {
+        content: "✅";
+        position: absolute;
+        left: 0;
+    }
+
+    .investment-block {
+        text-align: center;
+        margin-top: 3rem;
+        padding: 2rem;
+        background: rgba(255, 20, 147, 0.1);
+        border-radius: 0.5rem;
+    }
+
+    .investment-block h3 {
+        color: var(--primary);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .investment-block .btn {
+        margin-top: 1.5rem;
+    }
+
+    .subtitle {
+        color: var(--secondary);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    .additional-services {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--primary);
+    }
+
+    .services-grid {
+        display: grid;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .service-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .service-card h4 {
+        color: var(--primary);
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .service-card .price {
+        color: var(--secondary);
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .service-card .description {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .service-card ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .service-card li {
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .service-card li::before {
+        content: "✓";
+        color: var(--primary);
+        position: absolute;
+        left: 0;
+    }
+
+    @media (min-width: 768px) {
+        .corners-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .deliverables-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .services-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .packages-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .corners-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .deliverables-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .services-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .benefits-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .packages-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .intro-card,
+        .why-card,
+        .know-grow-card {
+            padding: 1.5rem;
+            margin: 0 1rem;
+        }
+
+        .corners-grid,
+        .deliverables-grid,
+        .services-grid,
+        .benefits-grid,
+        .packages-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-cta {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+</style>

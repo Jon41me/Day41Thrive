@@ -1,0 +1,264 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FloatingActionButton from '../components/FloatingActionButton.astro';
+
+const programs = [
+    {
+        title: "Beyond 41 – Because thriving starts on Day 41 and never stops.",
+        description: "Build high-performance teams and develop effective leadership skills.",
+        link: "/programs/leadership-consulting"
+    },
+    {
+        title: "The G.U.E.S.S. Framework",
+        description: "Master our comprehensive leadership model for action and success through Growth, Unleashing potential, Enhancement, Strategy, and Synchronization.",
+        link: "/programs/guess-framework"
+    },
+    {
+        title: "Repair vs. Replace Strategy",
+        description: "Learn how to maximize lead generation and convert repair opportunities into full replacements.",
+        link: "/programs/repair-replace-strategy"
+    },
+    {
+        title: "Flip the Script",
+        description: "Transform your business from insurance-dependent to retail-focused and thrive year-round.",
+        link: "/programs/flip-script"
+    },
+    {
+        title: "The 4 C's of Business Framework",
+        description: "Master the essential pillars of business success: Capture, Convert, Create, and Control.",
+        link: "/programs/four-cs-framework"
+    },
+    {
+        title: "Winning Sales Compass",
+        description: "Empower your team with proven sales systems and training to close more deals and build lasting customer relationships.",
+        link: "/programs/winning-sales-compass"
+    },
+    {
+        title: "The Profit Multiplier Formula",
+        description: "Turning one job into many with a multi-channel approach that keeps your brand in front of homeowners.",
+        link: "/programs/omni-local-marketing"
+    },
+    {
+        title: "Win with Warranties",
+        description: "Elevating value and peace of mind with industry-leading warranty programs that protect your business and delight your customers.",
+        link: "/programs/gaf-golden-pledge"
+    }
+];
+---
+
+<Layout title="Programs - Day 41 Thrive">
+    <Header />
+    <main class="programs-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">Our Programs</h1>
+                <p class="hero-description">Discover our comprehensive suite of programs designed to help you and your team thrive in today's challenging business environment.</p>
+            </div>
+        </section>
+
+        <section class="scaling-framework-section">
+            <div class="container">
+                <div class="scaling-card">
+                    <h2 class="scaling-title">We help Contractors with the proven framework to scale from $2M to $10M in under 3 years</h2>
+                    <p class="scaling-description">Our proven methodologies and strategic frameworks are specifically designed to help construction and home service businesses achieve sustainable growth and operational excellence.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="programs-section">
+            <div class="container">
+                <div class="programs-grid">
+                    {programs.map(program => (
+                        <div class="program-card">
+                            <h2>{program.title}</h2>
+                            <p>{program.description}</p>
+                            <a href={program.link} class="btn">Learn More</a>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Let's discuss how our programs can help you achieve your goals.</p>
+                <a href="/contact" class="btn">Contact Us</a>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .programs-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .scaling-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .scaling-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .scaling-title {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        margin-bottom: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .scaling-description {
+        color: var(--text);
+        font-size: clamp(1rem, 1.5vw, 1.1rem);
+        line-height: 1.6;
+    }
+
+    .programs-grid {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .program-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .program-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .program-card h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        margin-bottom: 1rem;
+    }
+
+    .program-card p {
+        color: var(--text);
+        margin-bottom: 1.5rem;
+        font-size: clamp(1rem, 1.5vw, 1.1rem);
+        line-height: 1.6;
+    }
+
+    .cta-section {
+        text-align: center;
+        background: rgba(255, 20, 147, 0.05);
+    }
+
+    .cta-section h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+        margin-bottom: 2rem;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background: var(--primary);
+        color: white;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        background: var(--secondary);
+        transform: translateY(-2px);
+    }
+
+    @media (min-width: 768px) {
+        .programs-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .programs-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .program-card {
+            padding: 1.5rem;
+        }
+        
+        .scaling-card {
+            padding: 1.5rem;
+            margin: 0 1rem;
+        }
+    }
+</style>

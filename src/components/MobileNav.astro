@@ -1,0 +1,54 @@
+---
+const menuItems = [
+    { href: "/#about", text: "Our Story", isNav: true },
+    { href: "/#services", text: "What We Offer", isNav: true },
+    { href: "/#framework", text: "THRIVE Framework", isNav: true },
+    { href: "/#book", text: "Our Book", isNav: true },
+    { href: "/plans", text: "Plans", isNav: false },
+    { href: "/media", text: "Media", isNav: false },
+    { href: "/#contact", text: "Contact", isNav: true }
+];
+---
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <nav class="mobile-nav" role="navigation">
+        <div class="mobile-nav-content">
+            {menuItems.map((item, index) => (
+                <a 
+                    href={item.href}
+                    class="nav-item"
+                    data-nav={item.isNav ? item.href.replace('/#', '') : null}
+                    style={`animation-delay: ${index * 0.1}s`}
+                >
+                    {item.text}
+                </a>
+            ))}
+            <a 
+                href="https://learn.day41thrive.com" 
+                class="nav-item login-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={`animation-delay: ${menuItems.length * 0.1}s`}
+            >
+                Thrive Login
+            </a>
+        </div>
+    </nav>
+</div>
+
+<script>
+    import { handleNavigation } from '../utils/navigation';
+
+    // Handle navigation for mobile nav items
+    document.querySelectorAll('.mobile-nav-content a[data-nav]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href');
+            if (targetId) {
+                handleNavigation(e, targetId);
+            }
+        });
+    });
+</script>
+
+<style>
+    /* Keep existing styles */
+</style>

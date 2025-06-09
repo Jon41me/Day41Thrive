@@ -1,0 +1,34 @@
+---
+import { menuItems } from '../../utils/menuItems';
+import NavLink from './NavLink.astro';
+---
+<nav class="desktop-nav" role="navigation">
+    <div class="nav-links">
+        {menuItems.map(item => (
+            <NavLink {...item} />
+        ))}
+    </div>
+</nav>
+
+<style>
+    .desktop-nav {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    @media (min-width: 769px) {
+        .desktop-nav {
+            display: block;
+        }
+    }
+</style>
+
+<script>
+    import { setupNavigation } from '../../utils/navigation';
+    setupNavigation();
+</script>

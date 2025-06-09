@@ -1,0 +1,293 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FloatingActionButton from '../components/FloatingActionButton.astro';
+
+interface Partner {
+    name: string;
+    description: string;
+    status: 'active' | 'coming-soon';
+    link?: string;
+}
+
+const partners: Partner[] = [
+    {
+        name: "HireBus",
+        description: "We make hiring less guesswork, more \"heck yes!\" Get instant insights into who's a fit, who's a flop, and who's your next rockstar.",
+        status: "active",
+        link: "https://hirebus.com/thrive"
+    },
+    {
+        name: "Ugly Roof",
+        description: "We help roofing companies transform their company to become repair and rejuvenation experts",
+        status: "active",
+        link: "https://uglyroof.com"
+    },
+    {
+        name: "LeadScout",
+        description: "Lead Scout is the \"capture opportunity\" app for door-to-door pros. Tag homes, track leads, and send follow-ups—all from your phone. It's like having a sales assistant in your pocket.",
+        status: "active",
+        link: "https://leadscoutapp.com"
+    },
+    {
+        name: "Get The Referral",
+        description: "They built the ultimate referral machine. Their app turns happy customers into lead-generating champs—with tracking, rewards, and real-time updates baked in.",
+        status: "active",
+        link: "https://www.getthereferral.com"
+    },
+    {
+        name: "Clientric",
+        description: "Clientric helps roofing businesses nail their CRM game. From lead to invoice, they patch up your process leaks and shingle-handedly boost your bottom line.",
+        status: "active",
+        link: "https://clientric.co"
+    },
+    {
+        name: "Saenz Global",
+        description: "Let Saenz Global handle your roofing admin tasks—so you can focus on nailing more sales and raising the roof on your business.",
+        status: "active",
+        link: "https://www.saenzglobal.com"
+    },
+    {
+        name: "Roofr",
+        description: "Roofr is your all-in-one roofing platform. From instant measurements to slick proposals, they help you close deals faster and look like a pro doing it.",
+        status: "active",
+        link: "https://www.roofr.com"
+    },
+    {
+        name: "Guaranteed Estimates",
+        description: "Leads in. Deals out. Automated follow-ups so smooth, you'd think you hired a sales ninja.",
+        status: "active",
+        link: "https://guaranteedestimates.com"
+    },
+    {
+        name: "Roofing Success Podcast",
+        description: "Raise the roof on your business with insights from pros who've nailed it.",
+        status: "active",
+        link: "https://roofingsuccesspodcast.com"
+    },
+    {
+        name: "Dope Marketing",
+        description: "Dope Marketing helps roofing companies dominate their local markets with proven digital marketing strategies and automated lead generation systems.",
+        status: "active",
+        link: "https://www.dopemarketingllc.com"
+    },
+    {
+        name: "System Thrive",
+        description: "Transformational leadership program empowering entrepreneurs and teams to thrive beyond life's challenges.",
+        status: "active",
+        link: "https://systemthrive.com"
+    },
+    {
+        name: "Jeff Valder Coaching",
+        description: "Expert personal development and life coaching to help you unlock your full potential, overcome obstacles, and create lasting positive change in your life.",
+        status: "active",
+        link: "https://jeffvalder.com"
+    },
+    {
+        name: "Paperoute",
+        description: "Innovative digital solutions for modern businesses.",
+        status: "active",
+        link: "https://paperoute.com"
+    },
+    {
+        name: "Distinguished Partner",
+        description: "This partnership opportunity awaits the right company.",
+        status: "coming-soon"
+    },
+    {
+        name: "Elite Collaborator",
+        description: "Premium partnership position available for industry leaders.",
+        status: "coming-soon"
+    },
+    {
+        name: "Visionary Partner",
+        description: "Be part of shaping the future of the industry.",
+        status: "coming-soon"
+    },
+    {
+        name: "Growth Partner",
+        description: "Exciting partnership opportunity coming soon!",
+        status: "coming-soon"
+    },
+    {
+        name: "Trusted Affiliate",
+        description: "Your company could be featured here as a trusted partner.",
+        status: "coming-soon"
+    },
+    {
+        name: "Business Alliance",
+        description: "Join our network of successful industry partners.",
+        status: "coming-soon"
+    }
+];
+---
+
+<Layout title="Partners - Day 41 Thrive">
+    <Header />
+    <main class="partners-page">
+        <section class="hero">
+            <div class="gradient-overlay"></div>
+            <div class="container">
+                <h1 class="animated-title">Partners & Affiliates</h1>
+                <p class="hero-description">Join our growing network of industry leaders and innovators who are transforming the future of business together.</p>
+            </div>
+        </section>
+
+        <section class="partners-section">
+            <div class="container">
+                <div class="partners-grid">
+                    {partners.map(partner => (
+                        <div class="partner-card">
+                            <h3>{partner.name}</h3>
+                            <p>{partner.description}</p>
+                            {partner.status === 'active' ? (
+                                <a href={partner.link} class="btn" target="_blank" rel="noopener noreferrer">
+                                    Learn More
+                                </a>
+                            ) : (
+                                <span class="coming-soon">Coming Soon</span>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Become a Partner</h2>
+                <p>Interested in joining our network of industry leaders? Contact us to learn more about partnership opportunities.</p>
+                <a href="/#contact" class="btn">Contact Us</a>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .partners-page {
+        padding-top: 80px;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/storm-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 0 4rem;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(255,20,147,0.3) 100%);
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .animated-title {
+        color: white;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .partners-grid {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .partner-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        transition: transform 0.3s ease;
+    }
+
+    .partner-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .partner-card h3 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .partner-card p {
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+        line-height: 1.6;
+    }
+
+    .coming-soon {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: rgba(255, 20, 147, 0.1);
+        color: var(--primary);
+        border-radius: 0.25rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .cta-section {
+        text-align: center;
+        background: rgba(255, 20, 147, 0.05);
+    }
+
+    .cta-section h2 {
+        color: var(--primary);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 2rem;
+    }
+
+    .cta-section p {
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .partners-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .partners-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .partner-card {
+            padding: 1.5rem;
+        }
+    }
+</style>

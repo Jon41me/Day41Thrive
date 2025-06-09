@@ -1,0 +1,442 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import FloatingActionButton from '../../components/FloatingActionButton.astro';
+
+const positions = [
+    "Owner",
+    "CEO",
+    "COO", 
+    "GM",
+    "Sales Manager",
+    "Production Manager",
+    "Individual Contributor",
+    "Employee"
+];
+---
+
+<Layout title="Start Assessment - Day 41 Thrive">
+    <Header />
+    <main class="assessment-page">
+        <section class="assessment-section">
+            <div class="container">
+                <div class="assessment-card">
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 5%;"></div>
+                        <span class="progress-text">Step 1 of 42</span>
+                    </div>
+
+                    <h1>Let's Get Started</h1>
+                    <p class="intro-text">First, we'll need some basic information about you and your business.</p>
+
+                    <form id="basicInfoForm" class="assessment-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="firstName">First Name*</label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    required 
+                                    placeholder="Enter your first name"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name*</label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    required 
+                                    placeholder="Enter your last name"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="position">Position*</label>
+                                <select id="position" name="position" required>
+                                    <option value="">Select your position</option>
+                                    {positions.map(position => (
+                                        <option value={position}>{position}</option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address*</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    required 
+                                    placeholder="Enter your email address"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Cell Phone*</label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone" 
+                                    required 
+                                    placeholder="Enter your cell phone"
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    title="Phone number format: XXX-XXX-XXXX"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="zipCode">Zip Code (Headquarters)*</label>
+                                <input 
+                                    type="text" 
+                                    id="zipCode" 
+                                    name="zipCode" 
+                                    required 
+                                    placeholder="Enter headquarters zip code"
+                                    pattern="[0-9]{5}"
+                                    title="5-digit zip code"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="website">Website</label>
+                                <input 
+                                    type="url" 
+                                    id="website" 
+                                    name="website" 
+                                    placeholder="Enter your website URL"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="locations">Number of Locations*</label>
+                                <input 
+                                    type="number" 
+                                    id="locations" 
+                                    name="locations" 
+                                    required 
+                                    placeholder="# of Google Business Profiles"
+                                    min="1"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-footer">
+                            <p class="privacy-note">
+                                Your information is secure and will never be shared with third parties.
+                            </p>
+                            <div class="submit-wrapper">
+                                <button type="submit" class="btn next-btn">
+                                    Continue to Assessment
+                                    <span class="arrow">→</span>
+                                </button>
+                                <p class="error-message" id="errorMessage"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .assessment-page {
+        padding-top: 80px;
+    }
+
+    .assessment-section {
+        padding: 4rem 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .assessment-card {
+        background: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--primary);
+        box-shadow: 0 4px 20px rgba(255, 20, 147, 0.1);
+    }
+
+    .progress-bar {
+        background: rgba(255, 20, 147, 0.1);
+        height: 8px;
+        border-radius: 4px;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .progress {
+        background: var(--primary);
+        height: 100%;
+        border-radius: 4px;
+        transition: width 0.3s ease;
+    }
+
+    .progress-text {
+        position: absolute;
+        right: 0;
+        top: -1.5rem;
+        font-size: 0.9rem;
+        color: var(--text);
+        opacity: 0.8;
+    }
+
+    h1 {
+        color: var(--primary);
+        font-size: clamp(1.75rem, 3vw, 2.25rem);
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .intro-text {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        font-size: 1.1rem;
+        color: var(--text);
+    }
+
+    .assessment-form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .form-grid {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    label {
+        font-weight: 600;
+        color: var(--text);
+    }
+
+    input,
+    select {
+        padding: 0.75rem;
+        border: 1px solid rgba(255, 20, 147, 0.2);
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    input:focus,
+    select:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 2px rgba(255, 20, 147, 0.1);
+    }
+
+    input::placeholder {
+        color: #999;
+    }
+
+    .form-footer {
+        margin-top: 2.5rem;
+        text-align: center;
+    }
+
+    .privacy-note {
+        font-size: 0.9rem;
+        color: var(--text);
+        opacity: 0.8;
+        margin-bottom: 1.5rem;
+    }
+
+    .submit-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .next-btn {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .next-btn:hover {
+        background: var(--secondary);
+        transform: translateY(-2px);
+    }
+
+    .next-btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .arrow {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+
+    .next-btn:hover .arrow {
+        transform: translateX(4px);
+    }
+
+    .error-message {
+        color: #ff4444;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        min-height: 1.2em;
+    }
+
+    @media (min-width: 768px) {
+        .form-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .assessment-section {
+            padding: 2rem 0;
+        }
+
+        .assessment-card {
+            padding: 1.5rem;
+            margin: 0 1rem;
+        }
+
+        .next-btn {
+            width: 100%;
+        }
+    }
+</style>
+
+<script>
+    // Phone number formatting
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 10) {
+                value = value.match(/(\d{3})(\d{3})(\d{4})/);
+                e.target.value = !value[2] ? value[1] : `${value[1]}-${value[2]}-${value[3]}`;
+            }
+        });
+    }
+
+    // Website URL formatting
+    const websiteInput = document.getElementById('website');
+    if (websiteInput) {
+        websiteInput.addEventListener('change', (e) => {
+            let url = e.target.value.trim();
+            if (url && !url.match(/^https?:\/\//i)) {
+                url = 'https://' + url;
+                e.target.value = url;
+            }
+        });
+    }
+
+    // Form validation and submission
+    const form = document.getElementById('basicInfoForm');
+    const errorMessage = document.getElementById('errorMessage');
+    
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            
+            try {
+                // Disable the submit button and show loading state
+                submitButton.disabled = true;
+                submitButton.innerHTML = 'Submitting...';
+                errorMessage.textContent = '';
+
+                // Get form data
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
+
+                // Format website URL if needed
+                if (data.website && !data.website.match(/^https?:\/\//i)) {
+                    data.website = 'https://' + data.website;
+                }
+
+                // Store form data for the assessment
+                sessionStorage.setItem('assessmentUserData', JSON.stringify(data));
+
+                // Send data to our API endpoint
+                try {
+                    const response = await fetch('/api/start-assessment', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(errorData.error || 'Failed to start assessment');
+                    }
+
+                    // Get the assessment ID and token from the response
+                    const responseData = await response.json();
+                    const { assessmentId, token } = responseData;
+
+                    // Navigate to the questions page with the assessment ID and token
+                    window.location.href = `/assessment/questions?assessmentId=${assessmentId}&token=${token}`;
+                } catch (apiError) {
+                    console.error('API Error:', apiError);
+                    
+                    // Send data to Zapier webhook as a backup
+                    try {
+                        const webhookUrl = 'https://hooks.zapier.com/hooks/catch/4197949/2xaumqg/';
+                        await fetch(webhookUrl, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                formData: data,
+                                timestamp: new Date().toISOString()
+                            }),
+                            mode: 'no-cors'
+                        });
+                        
+                        // Even if the API call failed, proceed to questions page
+                        // This is a fallback to ensure users can continue even if database operations fail
+                        window.location.href = '/assessment/questions';
+                    } catch (webhookError) {
+                        console.error('Webhook submission error:', webhookError);
+                        // Still proceed to questions page as last resort
+                        window.location.href = '/assessment/questions';
+                    }
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                errorMessage.textContent = 'There was an error saving your information. Please try again.';
+                
+                // Reset button state
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            }
+        });
+    }
+</script>

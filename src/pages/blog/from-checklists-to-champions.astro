@@ -1,0 +1,217 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import FloatingActionButton from '../../components/FloatingActionButton.astro';
+import BlogContactCTA from '../../components/BlogContactCTA.astro';
+
+const blogPost = {
+    title: "From Checklists to Champions: Training Teams That Think Like Owners",
+    date: "May 27, 2025",
+    author: "Jonathon Broce"
+};
+---
+
+<Layout title={`${blogPost.title} - Day 41 Thrive`}>
+    <Header />
+    <main class="blog-post">
+        <article class="container">
+            <header class="post-header">
+                <h1>{blogPost.title}</h1>
+                <div class="post-meta">
+                    <span class="date">{blogPost.date}</span>
+                    <span class="author">By {blogPost.author}</span>
+                </div>
+                <p class="subtitle">(How to Build a Team That Solves Problems Instead of Bringing Them to You)</p>
+            </header>
+            <div class="post-content">
+                <h2>Introduction: Are You the Brain… or the Bottleneck?</h2>
+                <p>Every leader hits this moment: You've built the systems, written the checklists, handed over the SOPs… And yet your team still asks, "What should I do next?"</p>
+                
+                <p>At first, it feels good to be needed. Eventually, it just feels heavy.</p>
+                
+                <p>At Day 41 Thrive, we believe the goal of leadership isn't to create followers. It's to create decision-makers—people who think, act, and care like owners.</p>
+                
+                <p>You don't need a team that completes tasks. You need a team that takes ownership.</p>
+                
+                <p>Let's talk about how to make that shift.</p>
+
+                <h2>Phase 1: From "Do This" to "Think Through This"</h2>
+                <p>Most businesses start with task-based training. It's necessary—but it's not enough.</p>
+                
+                <p>🧠 If every instruction is a to-do…<br>
+                🧠 If every problem gets kicked back to you…<br>
+                🧠 If the team waits instead of moves…</p>
+                
+                <p>…you haven't built a team. You've built a call center—with you on the other end.</p>
+                
+                <p>The shift begins with reframing how you train.</p>
+                
+                <p>Instead of just teaching what to do, teach your team:</p>
+                <ul>
+                    <li>Why it matters</li>
+                    <li>How to evaluate what's happening</li>
+                    <li>What outcomes you're aiming for</li>
+                </ul>
+                
+                <p>That's how you move from checklists to champions.</p>
+
+                <h2>Phase 2: Train with a Framework, Not Just a Task List</h2>
+                <p>At Day 41 Thrive, we coach leaders to use training frameworks that guide decisions—not just actions.</p>
+                
+                <p>One of our favorites: the A.C.T. Model</p>
+                <ul>
+                    <li>A — Assess: What's happening? What's the root of the issue?</li>
+                    <li>C — Consider: What are my options? Who's affected?</li>
+                    <li>T — Take Action: What's the best solution with the info I have?</li>
+                </ul>
+                
+                <p>Give your team a consistent process to think through problems. Then trust them to act on it.</p>
+                
+                <p>🧩 When someone misses a delivery deadline<br>
+                🧩 When a customer pushes back<br>
+                🧩 When a team member calls out sick</p>
+                
+                <p>They don't have to bring it to you. They know how to think like an owner—because you taught them how.</p>
+
+                <h2>Phase 3: Shift Responsibility Without Losing Control</h2>
+                <p>Leaders get scared to let go because they assume letting go = losing control. It doesn't. Not if you delegate with clarity.</p>
+                
+                <p>Use outcome-based delegation instead of micro-instructions:</p>
+                <ul>
+                    <li>✅ Don't say: "Call the supplier and ask if they have it."</li>
+                    <li>✅ Do say: "Make sure we have materials on-site by 10am tomorrow. If they're delayed, find a backup source."</li>
+                </ul>
+                
+                <p>This gives your team the freedom to problem-solve and the responsibility to follow through.</p>
+                
+                <p>Control isn't about doing the job—it's about clearly defining the win and letting your people run with it.</p>
+
+                <h2>Phase 4: Build in Feedback Loops That Train Continuously</h2>
+                <p>Accountability isn't about catching people doing things wrong. It's about growing their awareness so they improve with every rep.</p>
+                
+                <p>Here's a simple feedback loop structure we recommend:</p>
+                <ol>
+                    <li>Ask: "What worked? What didn't?"</li>
+                    <li>Reflect: "How would you handle it next time?"</li>
+                    <li>Adjust: "What can we change in our system or training to prevent this?"</li>
+                </ol>
+                
+                <p>Do this weekly—not just when things go wrong.</p>
+                
+                <p>When your team debriefs their own performance, they grow without you having to push.</p>
+
+                <h2>Phase 5: Model the Mindset You Want Them to Adopt</h2>
+                <p>The best training method isn't your PowerPoint. It's your behavior.</p>
+                
+                <p>If you want your team to:</p>
+                <ul>
+                    <li>Take initiative</li>
+                    <li>Own their mistakes</li>
+                    <li>Think strategically</li>
+                    <li>Lead with kindness and clarity</li>
+                </ul>
+                
+                <p>Then you need to live that in front of them—every day.</p>
+                
+                <p>You can't train what you don't model.</p>
+                
+                <p>Be the blueprint. Let your leadership be the proof that ownership starts at the top.</p>
+
+                <h2>Final Thought: Your Job Is to Build People, Not Just Processes</h2>
+                <p>Checklists are great. But champions grow businesses.</p>
+                
+                <p>You don't need more task-runners. You need a team that sees what you see… and builds toward it with you.</p>
+                
+                <p>That starts with how you train.</p>
+                
+                <p>✅ Teach them to think<br>
+                ✅ Teach them to decide<br>
+                ✅ Teach them to own</p>
+                
+                <p>And watch what happens when your team starts solving problems without asking for permission.</p>
+                
+                <p>At Day 41 Thrive, we help leaders turn their vision into culture, and their team into confident, capable operators.</p>
+                
+                <p>Want help building your team training systems or leadership playbook? Let's build champions together.</p>
+
+                <BlogContactCTA />
+            </div>
+        </article>
+    </main>
+    <FloatingActionButton />
+</Layout>
+
+<style>
+    .blog-post {
+        padding-top: 80px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    .post-header {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    h1 {
+        color: var(--primary);
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        color: var(--secondary);
+        font-size: clamp(1.1rem, 2vw, 1.3rem);
+        font-style: italic;
+        margin-top: 0.5rem;
+    }
+
+    .post-meta {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        color: var(--text);
+        opacity: 0.8;
+        margin-bottom: 0.5rem;
+    }
+
+    .post-content {
+        color: var(--text);
+        line-height: 1.8;
+    }
+
+    .post-content h2 {
+        color: var(--primary);
+        margin: 2rem 0 1rem;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .post-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    .post-content ul,
+    .post-content ol {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .post-content li {
+        margin-bottom: 0.75rem;
+    }
+
+    .post-content strong {
+        color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 1.5rem;
+        }
+    }
+</style>
